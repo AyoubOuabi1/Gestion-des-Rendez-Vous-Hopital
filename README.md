@@ -11,7 +11,7 @@ Le système a 3 côtés qui sont l'administrateur, le médecin, et le patient.
 
 **Exigences**   
 
--Partie Admin: L'administrateur peut ajouter des médecins, les modifier et les supprimer.
+-Partie Admin: L'administrateur peut ajouter des médecins, les modifier et les supprimer.  
 Programmer les sessions des nouveaux médecins, supprimer les sessions.  
 Voir les détails des patients. Voir les réservations des patients.  
 
