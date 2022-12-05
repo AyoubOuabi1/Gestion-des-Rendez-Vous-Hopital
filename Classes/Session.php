@@ -102,9 +102,6 @@ class Session
         $this->title = $title;
     }
 
-    public function cancelSession(){
-
-    }
 
     public function addSession(){
 

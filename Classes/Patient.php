@@ -1,6 +1,6 @@
 <?php
 
-class Patient
+class Patient extends User
 {
     private $birthDay;
     private $address;

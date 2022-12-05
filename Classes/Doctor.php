@@ -1,6 +1,6 @@
 <?php
 
-class Doctor
+class Doctor extends User
 {
     private $nationalCode;
     private $speciality;
