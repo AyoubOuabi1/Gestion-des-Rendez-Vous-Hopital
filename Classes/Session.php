@@ -103,6 +103,7 @@ class Session
         $this->title = $title;
     }
 
+
     public function addSession(){
         $addsess = DbConnection::connect()->prepare("INSERT INTO `session`(`title`, `sessdate`, `maxNumber`, `doctorid`) VALUES ('$this->title','$this->sessDate','$this->maxNumber','$this->doctorId'");
         $addsess ->execute();

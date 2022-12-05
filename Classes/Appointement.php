@@ -8,6 +8,20 @@ class Appointement
     private $patientId;
 
     /**
+     * @param $appId
+     * @param $sessionId
+     * @param $date
+     * @param $patientId
+     */
+    public function __construct($appId, $sessionId, $date, $patientId)
+    {
+        $this->appId = $appId;
+        $this->sessionId = $sessionId;
+        $this->date = $date;
+        $this->patientId = $patientId;
+    }
+
+    /**
      * @return mixed
      */
     public function getAppId()
@@ -72,9 +86,18 @@ class Appointement
     }
 
     function canculAppointement(){
+        $qry=DbConnection::connect()->prepare("Delete from Appointement where id=?");
+        $qry->execute([$this->getAppId()]);
+        if($qry>0){
+            return true;
+        }else{
+            return false;
+        }
 
     }
     function getlAppointement(){
-
+        $apps=DbConnection::connect()->prepare("select * from appointment");
+        $apps->execute();
+        return $apps->fetchAll(PDO::FETCH_ASSOC);
     }
 }
