@@ -14,33 +14,28 @@
   <div class="grid grid-cols-12">
       <section class="col-span-2">
         <?php
-          include "sidbar.html";
+          include "sidebar.html";
           ?>
       </section>
-    <section class="bg-slate-100 col-span-10">
-        <div  id="adminDashAdminPage">
+    <section class="col-span-10 bg-slate-100">
+        <div class="hidden" id="adminDashAdminPage">
             <?php
-            include "admin.html";
+            include "DoctorDashboard.html";
             ?>
         </div>
-        <div style="display: none" id="adminDashAppointmentPage">
+        <div class="hidden"  id="adminDashAdminPage">
             <?php
-            include "appointmentAdmin.html";
+            include "DoctorDashPatients.html";
             ?>
         </div>
-        <div style="display: none" id="adminDashDoctorPage">
+        <div class="hidden"  id="adminDashAdminPage">
             <?php
-            include "doctors.html";
+            include "DoctotDashApp.html";
             ?>
         </div>
-        <div style="display: none" id="adminDashPatientsPage">
+        <div   id="adminDashAdminPage">
             <?php
-            include "patients.html";
-            ?>
-        </div>
-        <div style="display: none" id="adminDashSchedulePage">
-            <?php
-            include "ScheduleAdmin.html";
+            include "DoctorDashSession.html";
             ?>
         </div>
     </section>
