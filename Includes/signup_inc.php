@@ -22,7 +22,4 @@ include "../Classes/Signup_classes.php";
 
 
 
-
-
-
 ?>
