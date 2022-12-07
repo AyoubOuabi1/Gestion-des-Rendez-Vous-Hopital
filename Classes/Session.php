@@ -14,10 +14,11 @@ class Session
      * @param $sessDate
      * @param $maxNumber
      */
-    public function __construct($sessionId, $doctorId, $sessDate, $maxNumber)
+    public function __construct($sessionId, $doctorId, $title, $sessDate, $maxNumber)
     {
         $this->sessionId = $sessionId;
         $this->doctorId = $doctorId;
+        $this->title = $title;
         $this->sessDate = $sessDate;
         $this->maxNumber = $maxNumber;
     }
@@ -104,28 +105,31 @@ class Session
 
 
     public function addSession(){
-
+        $addsess = DbConnection::connect()->prepare("INSERT INTO `session`(`title`, `sessdate`, `maxNumber`, `doctorid`) VALUES ('$this->title','$this->sessDate','$this->maxNumber','$this->doctorId'");
+        $addsess ->execute();
     }
     public function removeSesssion(){
-
+        $qry = DbConnection::connect()->prepare("delete from `session` where id = '$this->sessionId'");
+        $qry ->execute();
+        if($qry>0){
+            return true;
+        }else{
+            return false;
+        }
     }
     public function updateSession(){
-
+    $apdsess = DbConnection::connect()->prepare("UPDATE `session` SET `title`='$title', `sessdate`='$sessdate', `maxNumber`='$maxnumber', `doctorid`='$docid', WHERE  id = '$this->sessionId'");
+    $apdsess ->execute();
     }
 
     public function selectSession(){
-
+        $sess = DbConnection::connect()->prepare("select from session");
+        $sess ->execute();
+        return $sess->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function BookingSession(){
 
     }
-
-
-
-
-
-
-
 
 }
