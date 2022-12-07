@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+</head>
+
+<body>
+    <section>
+        <div class="h-screen shadow-md ">
+          <div class="flex flex-col text-center my-8">
+            <div class="flex  place-content-center">
+              <div
+                      class="rounded-full mr-3 bg-black"
+                      style="width: 50px; height: 50px"
+              ></div>
+              <div>
+                <p class="font-bold text-lg">Test Doctor</p>
+                <p>doctor@yocode.com</p>
+              </div>
+            </div>
+            <div>
+              <button
+                      class="my-12 bg-blue-400 hover:bg-cyan-500 text-blue-900 font-bold rounded px-20 py-1"
+                      type="button"
+              >
+                log out
+              </button>
+            </div>
+            <div
+                    class="mb-8 self-center bg-stone-200"
+                    style="width: 90%; height: 2px"
+            ></div>
+          </div>
+      
+          <div>
+            <ul class="text-white list-unstyled ml-10 text-base">
+              <li class="font-semibold py-6" style="cursor: pointer">
+                <a class="text-black hover:text-cyan-500 flex" title="" onclick="changePageIntoAdminPage()">
+                  <img class="px-3" src="../../img/icons/home.svg"> Home
+                </a>
+              </li>
+              <li class="font-semibold py-6"  style="cursor: pointer">
+                <a class="hover:text-cyan-500 text-black" title="" onclick="changePageIntoDoctorPage()"
+                ><i class="fa-regular fa-bookmark px-3"></i>
+                  All Appointments</a>
+              </li>
+              <li class="font-semibold py-6"  style="cursor: pointer">
+                <a class="hover:text-cyan-500 text-black flex " title="" onclick="changePageIntoSchedulePage()"
+                ><img class="px-3" src="../../img/icons/schedule.svg"> Scheduled sessions
+                </a>
+              </li>
+              <li class="font-semibold py-6"  style="cursor: pointer">
+                <a class="hover:text-cyan-500 text-black flex" title="" onclick="changePageIntoAppointmentPage()"
+                ><img class="px-3" src="../../img/icons/dashboard.svg">
+                  My bookings
+                </a>
+              </li>
+              <li class="font-semibold py-6"  style="cursor: pointer">
+                <a class="hover:text-cyan-500 text-black flex" title="" onclick="changePageIntoPatientPage()"
+                ><img class="px-3" src="../../img/icons/settings.svg"> Settings</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      
+      </section>
+      
+
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+        integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+    <script src="Scripts/main.js"></script>
+</body>
