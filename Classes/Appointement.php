@@ -85,10 +85,10 @@ class Appointement
         $this->patientId = $patientId;
     }
 
-    function canculAppointement(){
+    public static function canculAppointement($id){
         $con=DbConnection::connect();
         $qry=$con->prepare("Delete from Appointement where id=?");
-        $qry->execute([$this->getAppId()]);
+        $qry->execute([$id]);
         if($qry>0){
             $con=null;
             return true;
