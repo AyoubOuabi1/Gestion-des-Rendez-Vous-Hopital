@@ -1,3 +1,4 @@
+<section class=" mx-3 my-2">
  <div class="flex justify-between">
         <div class="flex items-center">
 
@@ -17,7 +18,9 @@
             </div>
         </div>
     </div>
+</section>
 
+<section class="mx-10">
     <div class="shadow-md p-6 border w-full m-2">
 
         <div class="mr-2 py-5 px-2 border-inherit rounded bg-slate-200">
@@ -53,3 +56,4 @@
                 </h1>
                 <h1>Will permannetly remove your account</h1>
                 </div>
+</section>

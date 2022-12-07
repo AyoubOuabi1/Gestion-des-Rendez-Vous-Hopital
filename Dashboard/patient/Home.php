@@ -1,5 +1,5 @@
 
-<body>
+<section class=" mx-3 my-2">
     <div class="flex justify-between" >
         <h3 class="font-bold pt-3">Home</h3>
         <div class="flex items-center">
@@ -24,8 +24,9 @@
             <button class="bg-blue-500 hover:bg-blue-700 text-white rounded py-2 px-6 ml-2">Search</button>
         </div>
     </div>
+</section>
 
-
+<section class="mx-10">
     <div class="grid grid-cols-12 gap-3">
         <div class="col-span-6">
             <div class="mt-10">
@@ -123,4 +124,5 @@
         </div>
 
     </div>
+</section>
 </body>

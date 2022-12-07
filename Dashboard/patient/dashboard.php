@@ -26,29 +26,29 @@
           ?>
       </section>
     <section class="bg-slate-100 col-span-10">
-        <div  id="adminDashAdminPage">
+        <div  id="patientDashHomePage">
             <?php
-            include "dashpat.php";
+            include "Home.php";
             ?>
         </div>
-        <div style="display: none" id="adminDashAppointmentPage">
+        <div class="hidden" id="patientDashDoctorsPage">
             <?php
-            // include "dachpatDOC.html";
+            include "Doctors.php";
             ?>
         </div>
-        <div style="display: none" id="adminDashDoctorPage">
+        <div class="hidden" id="patientDashSessionsPage">
             <?php
-            // include "patienetsess.html";
+            include "Scheduled_Sessions.php";
             ?>
         </div>
-        <div style="display: none" id="adminDashPatientsPage">
+        <div class="hidden" id="patientDashBookingsPage">
             <?php
-            // include "mybooking.html";
+            include "My_bookings.php";
             ?>
         </div>
-        <div  id="adminDashSchedulePage">
+        <div  class="hidden" id="patientDashSettingsPage">
             <?php
-            // include "settingpat.html";
+            include "Settings.php";
             ?>
         </div>
     </section>

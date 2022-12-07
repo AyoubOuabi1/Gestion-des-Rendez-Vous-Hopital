@@ -1,4 +1,4 @@
-
+<section class=" mx-3 my-2">
     <div class="flex justify-between">
         <div class="flex items-center">
 
@@ -18,7 +18,9 @@
             </div>
         </div>
     </div>
+</section>
     
+<section class="mx-10">
     <div class="mb-6 mt-6">
         <h4>My booking <span>(2)</span></h4>
     </div>
@@ -55,5 +57,5 @@
         <p>Start:@18:00(24h)</p>
         <button class="my-4 mr-3 bg-sky-100 hover:bg-blue-700 hover:text-white text-sky-500 py-2 px-4 rounded w-full">Book Now</button>
     </div>
-
 </div>
+</section>

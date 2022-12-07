@@ -86,18 +86,24 @@ class Appointement
     }
 
     function canculAppointement(){
-        $qry=DbConnection::connect()->prepare("Delete from Appointement where id=?");
+        $con=DbConnection::connect();
+        $qry=$con->prepare("Delete from Appointement where id=?");
         $qry->execute([$this->getAppId()]);
         if($qry>0){
+            $con=null;
             return true;
         }else{
+            $con=null;
             return false;
         }
 
+
     }
-    function getlAppointement(){
-        $apps=DbConnection::connect()->prepare("select * from appointment");
+    public static function getlAppointement(){
+        $con=DbConnection::connect();
+        $apps=$con->prepare("select * from appointment");
         $apps->execute();
+        $con=null;
         return $apps->fetchAll(PDO::FETCH_ASSOC);
     }
 }

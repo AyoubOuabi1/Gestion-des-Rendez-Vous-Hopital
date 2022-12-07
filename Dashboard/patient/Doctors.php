@@ -1,4 +1,4 @@
-
+<section class="mx-3 my-2">
     <div class="flex justify-between">
         <div class="flex items-center">
             <button class="mr-3 bg-sky-100 hover:bg-blue-700 hover:text-white text-sky-500 py-2 px-4 rounded"><i class="mr-2 fa fa-arrow-left"></i>Back</button>
@@ -20,6 +20,9 @@
             </div>
         </div>
     </div>
+    </section>
+
+    <section class="mx-10">
     <div class="mb-6 mt-6">
         <h4>All Doctors <span>(2)</span></h4>
     </div>
@@ -46,3 +49,4 @@
           </tr>
         </tbody>
       </table>
+      </section>
