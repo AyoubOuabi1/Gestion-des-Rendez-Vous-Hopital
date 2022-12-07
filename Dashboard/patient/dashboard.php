@@ -22,33 +22,33 @@
   <div class="grid grid-cols-12">
       <section class="col-span-2">
         <?php
-          include "sidbar.html";
+          include "sideBar.html";
           ?>
       </section>
     <section class="bg-slate-100 col-span-10">
         <div  id="adminDashAdminPage">
             <?php
-            include "admin.php";
+            include "dashpat.php";
             ?>
         </div>
         <div style="display: none" id="adminDashAppointmentPage">
             <?php
-            include "appointmentAdmin.html";
+            // include "dachpatDOC.html";
             ?>
         </div>
         <div style="display: none" id="adminDashDoctorPage">
             <?php
-            include "doctors.html";
+            // include "patienetsess.html";
             ?>
         </div>
         <div style="display: none" id="adminDashPatientsPage">
             <?php
-            include "patients.php";
+            // include "mybooking.html";
             ?>
         </div>
-        <div style="display: none" id="adminDashSchedulePage">
+        <div  id="adminDashSchedulePage">
             <?php
-            include "ScheduleAdmin.html";
+            // include "settingpat.html";
             ?>
         </div>
     </section>

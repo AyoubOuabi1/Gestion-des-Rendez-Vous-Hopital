@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <title>Home</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    
-</head>
 
 <body>
     <div class="flex justify-between" >
@@ -17,7 +5,7 @@
         <div class="flex items-center">
             <div>
                 <p class="text-slate-400">Today's Date</p>
-                <h3 class="font-bold">2022-12-02</h3>
+                <h3 class="font-bold"><?php echo date('Y-m-d') ;?></h3>
             </div>
 
             <div class="mx-2 p-1 border-inherit rounded bg-slate-200">
@@ -135,8 +123,4 @@
         </div>
 
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
-        integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
-    <script src="Scripts/main.js"></script>
 </body>
