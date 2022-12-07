@@ -6,16 +6,17 @@ class DbConnection
     {
         $servername = "localhost";
         $username = "root";
-        $password = " ";
+        $password = "";
         $conn = null;
         try {
-            $conn = new PDO("mysql:host=$servername;cliniquedb=myDB", $username, $password);
+            $conn = new PDO("mysql:host=$servername;dbname=cliniquedb", $username, $password);
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
             //setAttribute() method sets a new value to an attribute.
-            return $conn;
+           
+             return $conn;
         } catch (PDOException $e) {
-            return $conn;
+            die('db error');
         }
     }
 }
