@@ -22,7 +22,6 @@ class DbConnection
 }
 /* PDO::ATTR_ERRMODE
 Error reporting mode of PDO. Can take one of the following values:
-
 -->PDO::ERRMODE_SILENT
 Only sets error codes.
 -->PDO::ERRMODE_WARNING

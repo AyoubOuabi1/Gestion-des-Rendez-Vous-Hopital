@@ -1,0 +1,93 @@
+
+    <section class="mx-3 my-2">
+        <div class="flex justify-between">
+            <div class="flex items-center">
+                <button class="mr-3 bg-sky-100 hover:bg-blue-700 hover:text-white text-sky-500 py-2 px-4 rounded"><i class="mr-2 fa fa-arrow-left"></i>Back</button>
+                <h3 class="font-bold">Schedule manager</h3>
+            </div>
+
+            <div class="flex items-center">
+                <div>
+                    <p class="text-slate-400">Today's Date</p>
+                    <h3 class="font-bold">2022-12-02</h3>
+                </div>
+
+                <div class="mx-2">
+                    <i class="fa fa-calendar-alt bg-slate-100 p-3 rounded"></i>
+                </div>
+            </div>
+        </section>
+
+        <section class="mx-10">
+        <div class="mt-10 flex">
+            <h4>Schedule a Session</h4>
+            <div>
+                <button class="bg-blue-500 min-w-full hover:bg-blue-700 text-white py-1 px-4 rounded mb-6 ml-2"><i class="fa fa-plus mr-2"></i>Add a Session</button>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <h4>All Sessions <span>(8)</span></h4>
+        </div>
+
+        <div>
+            <form action="" class="p-2 border rounded mb-8">
+            <div class="flex">
+                <div class="flex mx-20 items-center">
+                    <label class="mr-2" for="date">Date:</label>
+                    <input class="block border rounded p-1 grid grid-cols-4" type="date" name="date" id="date">
+                </div>
+
+                <div class="flex mx-20 items-center">
+                    <label class="mr-2" for="doctor">Doctor:</label>
+                    <select class="block border rounded p-1 grid grid-cols-4" name="doctor" id="doctor">
+                        <option value="doctor1">Choose Doctor Name from the list</option>
+                    </select>
+                </div>
+            
+
+                <div>
+                    <button class="bg-sky-100 hover:bg-blue-700 hover:text-white text-sky-500 py-2 px-4 rounded"><i class="fas fa-filter mr-2"></i>Filter</button>
+                </div>
+            </div>
+            </form>
+        </div>
+
+        <table class="table-fixed border w-full">
+            <thead>
+              <tr>
+                <th class="border-b-2 border-b-blue-500 px-4 py-2">Session Title</th>
+                <th class="border-b-2 border-b-blue-500 px-4 py-2">Doctor</th>
+                <th class="border-b-2 border-b-blue-500 px-4 py-2">Sheduled Time & Date</th>
+                <th class="border-b-2 border-b-blue-500 px-4 py-2">Max num that can be booked</th>
+                <th class="border-b-2 border-b-blue-500 px-4 py-2">Events</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="px-4 py-2 text-center">Test Session</td>
+                <td class="px-4 py-2 text-center">Test Doctor</td>
+                <td class="px-4 py-2 text-center">2050-01-01 18:00</td>
+                <td class="px-4 py-2 text-center">50</td>
+                <td class="px-4 py-2 text-center">
+                    <button class="bg-sky-100 hover:bg-blue-700 hover:text-white text-sky-500 py-2 px-4 rounded"><i class="fa fa-eye mr-2"></i>View</button>
+                    <button class="bg-sky-100 hover:bg-blue-700 hover:text-white text-sky-500 py-2 px-4 rounded"><i class="fa fa-trash mr-2"></i>Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 text-center">Test Session</td>
+                <td class="px-4 py-2 text-center">Adam</td>
+                <td class="px-4 py-2 text-center">2050-06-24 20:36</td>
+                <td class="px-4 py-2 text-center">112</td>
+                <td class="px-4 py-2 text-center">112</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 text-center">Intro to JavaScript</td>
+                <td class="px-4 py-2 text-center">Chris</td>
+                <td class="px-4 py-2 text-center">1,280</td>
+                <td class="px-4 py-2 text-center">1,280</td>
+                <td class="px-4 py-2 text-center">1,280</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
