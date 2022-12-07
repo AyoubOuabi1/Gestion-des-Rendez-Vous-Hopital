@@ -85,3 +85,43 @@ function changeDoctorDashIntoSettingPage(){
     $('#DoctorDashboardApp').addClass('hidden');
     $('#DoctorDashboardSession').addClass('hidden');
 }
+
+
+//patient section
+function changePatientDashIntoHomePage(){
+    $('#patientDashHomePage').removeClass('hidden');
+    $('#patientDashDoctorsPage').addClass('hidden');
+    $('#patientDashSessionsPage').addClass('hidden');
+    $('#patientDashBookingsPage').addClass('hidden');
+    $('#patientDashSettingsPage').addClass('hidden');
+}
+
+function changePatientDashIntoDoctorsPage(){
+    $('#patientDashDoctorsPage').removeClass('hidden');
+    $('#patientDashHomePage').addClass('hidden');
+    $('#patientDashSessionsPage').addClass('hidden');
+    $('#patientDashBookingsPage').addClass('hidden');
+    $('#patientDashSettingsPage').addClass('hidden');
+}
+
+function changePatientDashIntoSessionsPage(){
+    $('#patientDashSessionsPage').removeClass('hidden');
+    $('#patientDashHomePage').addClass('hidden');
+    $('#patientDashDoctorsPage').addClass('hidden');
+    $('#patientDashBookingsPage').addClass('hidden');
+    $('#patientDashSettingsPage').addClass('hidden');
+}
+function changePatientDashIntoBookingsPage(){
+    $('#patientDashBookingsPage').removeClass('hidden');
+    $('#patientDashHomePage').addClass('hidden');
+    $('#patientDashDoctorsPage').addClass('hidden');
+    $('#patientDashSessionsPage').addClass('hidden');
+    $('#patientDashSettingsPage').addClass('hidden');
+}
+function changePatientDashIntoSettingsPage(){
+    $('#patientDashSettingsPage').removeClass('hidden');
+    $('#patientDashHomePage').addClass('hidden');
+    $('#patientDashDoctorsPage').addClass('hidden');
+    $('#patientDashSessionsPage').addClass('hidden');
+    $('#patientDashBookingsPage').addClass('hidden');
+}
