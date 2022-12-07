@@ -18,24 +18,29 @@
           ?>
       </section>
     <section class="col-span-10 bg-slate-100">
-        <div class="hidden" id="adminDashAdminPage">
+        <div id="DoctorDashboardHome">
             <?php
             include "DoctorDashboard.html";
             ?>
         </div>
-        <div class="hidden"  id="adminDashAdminPage">
+        <div class="hidden"  id="DoctorDashboardPatient">
             <?php
             include "DoctorDashPatients.html";
             ?>
         </div>
-        <div class="hidden"  id="adminDashAdminPage">
+        <div class="hidden"  id="DoctorDashboardApp">
             <?php
             include "DoctotDashApp.html";
             ?>
         </div>
-        <div   id="adminDashAdminPage">
+        <div class="hidden"  id="DoctorDashboardSession">
             <?php
             include "DoctorDashSession.html";
+            ?>
+        </div>
+        <div  class="hidden" id="DoctorDashboardSettings">
+            <?php
+            include "DoctorDashSettings.html";
             ?>
         </div>
     </section>

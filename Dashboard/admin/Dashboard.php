@@ -23,22 +23,22 @@
             include "admin.html";
             ?>
         </div>
-        <div style="display: none" id="adminDashAppointmentPage">
+        <div class="hidden" id="adminDashAppointmentPage">
             <?php
             include "appointmentAdmin.html";
             ?>
         </div>
-        <div style="display: none" id="adminDashDoctorPage">
+        <div class="hidden" id="adminDashDoctorPage">
             <?php
             include "doctors.html";
             ?>
         </div>
-        <div style="display: none" id="adminDashPatientsPage">
+        <div class="hidden" id="adminDashPatientsPage">
             <?php
             include "patients.html";
             ?>
         </div>
-        <div style="display: none" id="adminDashSchedulePage">
+        <div class="hidden" id="adminDashSchedulePage">
             <?php
             include "ScheduleAdmin.html";
             ?>

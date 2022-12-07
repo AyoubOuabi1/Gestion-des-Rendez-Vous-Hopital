@@ -10,39 +10,78 @@ function changeSectionIntoSignUp() {
 
 //Admin section
 function changePageIntoAdminPage(){
-    $('#adminDashAdminPage').removeAttr('style');
-    $('#adminDashAppointmentPage').css('display', 'none');
-    $('#adminDashDoctorPage').css('display', 'none');
-    $('#adminDashPatientsPage').css('display', 'none');
-    $('#adminDashSchedulePage').css('display', 'none');
+    $('#adminDashAdminPage').removeClass('hidden');
+    $('#adminDashAppointmentPage').addClass('hidden');
+    $('#adminDashDoctorPage').addClass('hidden');
+    $('#adminDashPatientsPage').addClass('hidden');
+    $('#adminDashSchedulePage').addClass('hidden');
 }
 
 function changePageIntoAppointmentPage(){
-    $('#adminDashAppointmentPage').removeAttr('style');
-    $('#adminDashAdminPage').css('display', 'none');
-    $('#adminDashDoctorPage').css('display', 'none');
-    $('#adminDashPatientsPage').css('display', 'none');
-    $('#adminDashSchedulePage').css('display', 'none');
+    $('#adminDashAppointmentPage').removeClass('hidden');
+    $('#adminDashAdminPage').addClass('hidden');
+    $('#adminDashDoctorPage').addClass('hidden');
+    $('#adminDashPatientsPage').addClass('hidden');
+    $('#adminDashSchedulePage').addClass('hidden');
 }
 
 function changePageIntoDoctorPage(){
-    $('#adminDashDoctorPage').removeAttr('style');
-    $('#adminDashAdminPage').css('display', 'none');
-    $('#adminDashAppointmentPage').css('display', 'none');
-    $('#adminDashPatientsPage').css('display', 'none');
-    $('#adminDashSchedulePage').css('display', 'none');
+    $('#adminDashDoctorPage').removeClass('hidden');
+    $('#adminDashAdminPage').addClass('hidden');
+    $('#adminDashAppointmentPage').addClass('hidden');
+    $('#adminDashPatientsPage').addClass('hidden');
+    $('#adminDashSchedulePage').addClass('hidden');
 }
 function changePageIntoPatientPage(){
-    $('#adminDashPatientsPage').removeAttr('style');
-    $('#adminDashAdminPage').css('display', 'none');
-    $('#adminDashAppointmentPage').css('display', 'none');
-    $('#adminDashDoctorPage').css('display', 'none');
-    $('#adminDashSchedulePage').css('display', 'none');
+    $('#adminDashPatientsPage').removeClass('hidden');
+    $('#adminDashAdminPage').addClass('hidden');
+    $('#adminDashAppointmentPage').addClass('hidden');
+    $('#adminDashDoctorPage').addClass('hidden');
+    $('#adminDashSchedulePage').addClass('hidden');
 }
 function changePageIntoSchedulePage(){
-    $('#adminDashSchedulePage').removeAttr('style');
-    $('#adminDashAdminPage').css('display', 'none');
-    $('#adminDashAppointmentPage').css('display', 'none');
-    $('#adminDashDoctorPage').css('display', 'none');
-    $('#adminDashPatientsPage').css('display', 'none');
+    $('#adminDashSchedulePage').removeClass('hidden');
+    $('#adminDashAdminPage').addClass('hidden');
+    $('#adminDashAppointmentPage').addClass('hidden');
+    $('#adminDashDoctorPage').addClass('hidden');
+    $('#adminDashPatientsPage').addClass('hidden');
+}
+
+//doctor section
+function changeDoctorDashIntoHomePage(){
+    $('#DoctorDashboardHome').removeClass('hidden');
+    $('#DoctorDashboardPatient').addClass('hidden');
+    $('#DoctorDashboardApp').addClass('hidden');
+    $('#DoctorDashboardSession').addClass('hidden');
+    $('#DoctorDashboardSettings').addClass('hidden');
+}
+
+function changeDoctorDashIntoPatientPage(){
+    $('#DoctorDashboardPatient').removeClass('hidden');
+    $('#DoctorDashboardHome').addClass('hidden');
+    $('#DoctorDashboardApp').addClass('hidden');
+    $('#DoctorDashboardSession').addClass('hidden');
+    $('#DoctorDashboardSettings').addClass('hidden');
+}
+
+function changeDoctorDashIntoAppointmentPage(){
+    $('#DoctorDashboardApp').removeClass('hidden');
+    $('#DoctorDashboardHome').addClass('hidden');
+    $('#DoctorDashboardPatient').addClass('hidden');
+    $('#DoctorDashboardSession').addClass('hidden');
+    $('#DoctorDashboardSettings').addClass('hidden');
+}
+function changeDoctorDashIntoSessionPage(){
+    $('#DoctorDashboardSession').removeClass('hidden');
+    $('#DoctorDashboardHome').addClass('hidden');
+    $('#DoctorDashboardPatient').addClass('hidden');
+    $('#DoctorDashboardApp').addClass('hidden');
+    $('#DoctorDashboardSettings').addClass('hidden');
+}
+function changeDoctorDashIntoSettingPage(){
+    $('#DoctorDashboardSettings').removeClass('hidden');
+    $('#DoctorDashboardHome').addClass('hidden');
+    $('#DoctorDashboardPatient').addClass('hidden');
+    $('#DoctorDashboardApp').addClass('hidden');
+    $('#DoctorDashboardSession').addClass('hidden');
 }
