@@ -118,7 +118,7 @@ class Session
         }
     }
     public function updateSession(){
-    $apdsess = DbConnection::connect()->prepare("UPDATE `session` SET `title`='$title', `sessdate`='$sessdate', `maxNumber`='$maxnumber', `doctorid`='$docid', WHERE  id = '$this->sessionId'");
+    $apdsess = DbConnection::connect()->prepare("UPDATE `session` SET `title`='$this->title', `sessdate`='$this->sessdate', `maxNumber`='$this->maxnumber', `doctorid`='$this->docid', WHERE  id = '$this->sessionId'");
     $apdsess ->execute();
     }
 

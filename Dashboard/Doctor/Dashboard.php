@@ -46,9 +46,7 @@
     </section>
   </div>
   <script
-          src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
-          integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
-          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../../Scripts/main.js"></script>
 </body>
 </html>

@@ -3,17 +3,18 @@ spl_autoload_register(function($className) {
     $file = '../Classes/'.$className.'.php';
     require $file;
 });
+getAppointmentData();
     $functionNam=$_POST['functionName'];
     if($functionNam=="getlAppointement"){
-        getAppointmentData();
+
     }else if ($functionNam=="canculAppointement"){
         canculAppointement();
     }
 
     function getAppointmentData() {
-        $arr= Array();
+        $arr= array();
         foreach(Appointement::getlAppointement() as $row){
-            $arr=array('id'=>$row['id'],
+            $arr[]=array('id'=>$row['id'],
                 'sessionid'=>$row['sessionid'],
                 'appdate'=>$row['appdate'],
                 'patid'=>$row['patid'],
@@ -22,7 +23,8 @@ spl_autoload_register(function($className) {
                 'DoctorLastName'=>$row['DoctorLastName'],
                 'PatientFirstName'=>$row['PatientFirstName'],
                 'PatientLastName'=>$row['PatientLastName'],
-                'title'=>$row['title']
+                'title'=>$row['title'],
+                'sessdate'=>$row['sessdate']
             );
         }
         $data['AppointementData']=$arr;
