@@ -1,5 +1,6 @@
 <?php
-
+include 'DbConnection.php' ;
+include 'User.php';
 class Patient extends User
 {
     private $birthDay;
@@ -19,6 +20,7 @@ class Patient extends User
      */
     public function getBirthDay()
     {
+        
         return $this->birthDay;
     }
 
@@ -62,17 +64,38 @@ class Patient extends User
         $this->cin = $cin;
     }
 
-    public function selectPatient(){
-
+    public static function selectPatient(){
+        $connection = new DbConnection ;
+        $connection = $connection->connect() ;
+        $query      = " SELECT firstName, lastName, cin, telephone, email, birthday FROM patient " ;
+        $stmt       = $connection->query($query) ;
+        $data       = $stmt->fetchAll() ;
+        return $data ;
     }
+
+    
+
+  
     public function deletePatient(){
 
     }
-    public function addPatient(){
+    // public static function addPatient(){
 
-    }
+    // }
     public function updatePatient(){
 
     }
 
+    public static function countPatient(){
+        $connection = new DbConnection ;
+        $connection = $connection->connect() ;
+        $query      = " SELECT COUNT(id) as numberOfPatients FROM patient " ;
+        $stmt       = $connection->query($query) ;
+        $data       = $stmt -> fetch() ;
+        return $data ;
+    }
+
 }
+
+    // $count = new Patient ;
+    // $row    = $count->countPatient() ;

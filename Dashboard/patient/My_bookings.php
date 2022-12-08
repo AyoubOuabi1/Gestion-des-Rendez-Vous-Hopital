@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <title>Home</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    
-</head>
-
-<body>
-
-
-
+<section class=" mx-3 my-2">
     <div class="flex justify-between">
         <div class="flex items-center">
 
@@ -34,8 +18,9 @@
             </div>
         </div>
     </div>
-    </section>
-    <section class="mx-10">
+</section>
+    
+<section class="mx-10">
     <div class="mb-6 mt-6">
         <h4>My booking <span>(2)</span></h4>
     </div>
@@ -72,10 +57,5 @@
         <p>Start:@18:00(24h)</p>
         <button class="my-4 mr-3 bg-sky-100 hover:bg-blue-700 hover:text-white text-sky-500 py-2 px-4 rounded w-full">Book Now</button>
     </div>
-
 </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
-        integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
-    <script src="Scripts/main.js"></script>
-</body>
+</section>
