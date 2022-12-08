@@ -1,20 +1,24 @@
 <?php
 include_once "DbConnection.php";
-class Doctor
+
+class Doctor  extends User
 {
     private $nationalCode;
     private $speciality;
     private $telenumber;
     private $cin;
-    // public function __construct($nationalCode, $speciality, $telenumber,$cin,$id, $firstName, $lastName, $email, $password){
-    //     $this->nationalCode = $nationalCode;
-    //     $this->speciality = $speciality;
-    //     $this->telenumber = $telenumber;
-    //     $this->cin = $cin;
-    //     parent::__construct($id, $firstName, $lastName, $email, $password);
+     public function __construct($cin,$nationalCode, $speciality, $telenumber, $firstName, $lastName, $email, $password){
+         $this->nationalCode = $nationalCode;
+         $this->speciality = $speciality;
+         $this->telenumber = $telenumber;
+         $this->cin = $cin;
+         parent::__construct($firstName, $lastName, $email, $password);
 
+     }
+
+    // public function __construct()
+    // {
     // }
-
     /**
      * @return mixed
      */
@@ -81,21 +85,55 @@ class Doctor
     }
 
     public function addDoctor(){
-     
-    }
+        $conn = DbConnection::connect();
+        // $cin = $_POST["cin"];
+        // $nationalCode = $_POST["Ncode"];
+        // $fname = $_POST["firstName"];
+        // $lname = $_POST["lastName"];
+        $lastName= $this->getLastName();
+        $firstName= $this->getFirstName();
+         $email = $this->getEmail();
+         $password=$this->getPassword();
+        // $password = $_POST["password"];
+        // $speciality = $_POST["speciality"];
+        // $telenumber = $_POST["pNumber"];
+        $stmt = $conn->prepare("INSERT INTO `doctor`(`cin`, `nationalCode`, `firstName`, `lastName`, `email`, `password`, `speciality`, `teleNumber`) VALUES ('$this->cin','$this->nationalCode','$firstName','$lastName','$email','$password','$this->speciality','$this->telenumber')");
+        if($stmt->execute()>0){
+            return true;
+        }else {
+            return false;
+        }
+     }
     public function updateDoctor(){
 
     }
     public function deleteDoctor(){
 
     }
-    public function selecetDoctors(){
+    public static function selecetDoctors(){
         $conn = DbConnection::connect();
-        $stmt = $conn->query("SELECT * FROM doctor ORDER BY id DESC LIMIT 1");
+        $stmt = $conn->query("SELECT * FROM doctor");
         $allData = $stmt->fetchAll();
          return $allData;
     //     var_dump($allData);
     }
+    public function displayDoctor(){
+        $id = $_GET['id'];
+        $conn = DbConnection::connect();
+        $stmt = $conn->query("SELECT doctor FROM doctor WHERE id=$id");
+        $allData = $stmt->fetchAll();
+        return $allData;
+    }
+    // public function countDoctors()
+    // {    $conn = DbConnection::connect();
+    //     $sql = $conn->prepare("SELECT count(*) FROM doctor");
+    //     if($result = $sql->execute()){
+
+    //     };
+    //     $row = mysqli_fetch_array($result);
+    //     echo  $row[0];
+    // }
+  
    
 
 

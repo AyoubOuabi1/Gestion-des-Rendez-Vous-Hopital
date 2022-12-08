@@ -26,7 +26,7 @@ function changePageIntoAppointmentPage(){
 }
 
 function changePageIntoDoctorPage(){
-    $('#adminDashDoctorPage').removeClass('hidden');
+    $("#adminDashDoctorPage").removeClass("hidden");
     $('#adminDashAdminPage').addClass('hidden');
     $('#adminDashAppointmentPage').addClass('hidden');
     $('#adminDashPatientsPage').addClass('hidden');
