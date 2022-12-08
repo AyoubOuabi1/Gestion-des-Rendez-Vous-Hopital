@@ -1,5 +1,5 @@
 <?php
-include "DbConnection.php";
+include_once "DbConnection.php";
 class Doctor
 {
     private $nationalCode;
@@ -20,6 +20,7 @@ class Doctor
      */
     public function getNationalCode()
     {
+
         return $this->nationalCode;
     }
 

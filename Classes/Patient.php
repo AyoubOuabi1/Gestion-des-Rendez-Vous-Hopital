@@ -1,18 +1,18 @@
 <?php
-
-class Patient extends User
+include_once 'DbConnection.php' ;
+class Patient
 {
     private $birthDay;
     private $address;
     private $cin;
 
-    public function __construct($birthDay, $address, $cin,$id, $firstName, $lastName, $email, $password)
-    {
-        $this->birthDay = $birthDay;
-        $this->address = $address;
-        $this->cin = $cin;
-        parent::__construct($id, $firstName, $lastName, $email, $password);
-    }
+    // public function __construct($birthDay, $address, $cin,$id, $firstName, $lastName, $email, $password)
+    // {
+    //     $this->birthDay = $birthDay;
+    //     $this->address = $address;
+    //     $this->cin = $cin;
+    //     // parent::__construct($id, $firstName, $lastName, $email, $password);
+    // }
 
     /**
      * @return mixed
@@ -63,8 +63,17 @@ class Patient extends User
     }
 
     public function selectPatient(){
-
+        $connection = new DbConnection ;
+        $connection = $connection->connect() ;
+        $query      = " SELECT firstName, lastName, cin, telephone, email, birthday FROM patient " ;
+        $stmt       = $connection->query($query) ;
+        $data       = $stmt->fetchAll() ;
+        return $data ;
     }
+
+    
+
+
     public function deletePatient(){
 
     }
@@ -75,4 +84,16 @@ class Patient extends User
 
     }
 
+    public function countPatient(){
+        $connection = new DbConnection ;
+        $connection = $connection->connect() ;
+        $query      = " SELECT COUNT(id) as numberOfPatients FROM patient " ;
+        $stmt       = $connection->query($query) ;
+        $data       = $stmt -> fetch() ;
+        return $data ;
+    }
+
 }
+
+    // $count = new Patient ;
+    // $row    = $count->countPatient() ;

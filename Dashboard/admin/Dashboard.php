@@ -1,4 +1,7 @@
-<?php include '../../Classes/Doctor.php' ?>
+<?php
+
+include '../../Classes/Patient.php';
+include '../../Classes/Doctor.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +29,7 @@
     <section class="bg-slate-100 col-span-10">
       <div id="adminDashAdminPage">
         <?php
-        include "admin.html";
+        include "admin.php";
         ?>
       </div>
       <div style="display: none" id="adminDashAppointmentPage">
@@ -41,7 +44,7 @@
       </div>
       <div style="display: none" id="adminDashPatientsPage">
         <?php
-        include "patients.html";
+        include "patients.php";
         ?>
       </div>
       <div style="display: none" id="adminDashSchedulePage">
