@@ -1,19 +1,19 @@
 <?php
-
-class Doctor extends User
+include "DbConnection.php";
+class Doctor
 {
     private $nationalCode;
     private $speciality;
     private $telenumber;
     private $cin;
-    public function __construct($nationalCode, $speciality, $telenumber,$cin,$id, $firstName, $lastName, $email, $password){
-        $this->nationalCode = $nationalCode;
-        $this->speciality = $speciality;
-        $this->telenumber = $telenumber;
-        $this->cin = $cin;
-        parent::__construct($id, $firstName, $lastName, $email, $password);
+    // public function __construct($nationalCode, $speciality, $telenumber,$cin,$id, $firstName, $lastName, $email, $password){
+    //     $this->nationalCode = $nationalCode;
+    //     $this->speciality = $speciality;
+    //     $this->telenumber = $telenumber;
+    //     $this->cin = $cin;
+    //     parent::__construct($id, $firstName, $lastName, $email, $password);
 
-    }
+    // }
 
     /**
      * @return mixed
@@ -80,7 +80,7 @@ class Doctor extends User
     }
 
     public function addDoctor(){
-
+     
     }
     public function updateDoctor(){
 
@@ -88,7 +88,20 @@ class Doctor extends User
     public function deleteDoctor(){
 
     }
-    public function selecetDoctor(){
-
+    public function selecetDoctors(){
+        $conn = DbConnection::connect();
+        $stmt = $conn->query("SELECT * FROM doctor ORDER BY id DESC LIMIT 1");
+        $allData = $stmt->fetchAll();
+         return $allData;
+    //     var_dump($allData);
     }
+   
+
+
+
+
+    // $stmt = $conn->prepare('SELECT `cin`, `nationalCode`, `firstName`, `lastName`, `email`, `password`, `speciality`, `teleNumber` FROM `doctor` ');
+    //      $data= $stmt->execute(array());
+    //      $allData=$data->fetchAll();
 }
+
