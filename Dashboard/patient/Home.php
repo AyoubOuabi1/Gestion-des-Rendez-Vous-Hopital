@@ -62,8 +62,11 @@
 
                 <div class="row-span-1 p-5 border border-inherit rounded-md bg-slate-50">
                     <div class="flex justify-between">
+                        <?php 
+                            $data  = Patient::countPatient() ;
+                        ?>
                         <div>
-                            <p class="text-blue-500 font-bold">3</p>
+                            <p class="text-blue-500 font-bold"><?php echo $data['numberOfPatients'] ; ?></p>
                             <h3 class="">All Patients</h3>
                         </div>
 
