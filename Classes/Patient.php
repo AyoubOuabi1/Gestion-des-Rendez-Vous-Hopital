@@ -1,24 +1,26 @@
 <?php
 include_once 'DbConnection.php' ;
-class Patient
+include 'User.php';
+class Patient extends User
 {
     private $birthDay;
     private $address;
     private $cin;
 
-    // public function __construct($birthDay, $address, $cin,$id, $firstName, $lastName, $email, $password)
-    // {
-    //     $this->birthDay = $birthDay;
-    //     $this->address = $address;
-    //     $this->cin = $cin;
-    //     // parent::__construct($id, $firstName, $lastName, $email, $password);
-    // }
+    public function __construct($birthDay, $address, $cin,$id, $firstName, $lastName, $email, $password)
+    {
+        $this->birthDay = $birthDay;
+        $this->address = $address;
+        $this->cin = $cin;
+        parent::__construct($id, $firstName, $lastName, $email, $password);
+    }
 
     /**
      * @return mixed
      */
     public function getBirthDay()
     {
+        
         return $this->birthDay;
     }
 
@@ -62,7 +64,7 @@ class Patient
         $this->cin = $cin;
     }
 
-    public function selectPatient(){
+    public static function selectPatient(){
         $connection = new DbConnection ;
         $connection = $connection->connect() ;
         $query      = " SELECT firstName, lastName, cin, telephone, email, birthday FROM patient " ;
@@ -73,18 +75,18 @@ class Patient
 
     
 
-
+  
     public function deletePatient(){
 
     }
-    public function addPatient(){
+    // public static function addPatient(){
 
-    }
+    // }
     public function updatePatient(){
 
     }
 
-    public function countPatient(){
+    public static function countPatient(){
         $connection = new DbConnection ;
         $connection = $connection->connect() ;
         $query      = " SELECT COUNT(id) as numberOfPatients FROM patient " ;

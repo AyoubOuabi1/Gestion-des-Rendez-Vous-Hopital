@@ -2,7 +2,6 @@
 spl_autoload_register(function($className) {
     $file = '../Classes/'.$className.'.php';
     require $file;
-
 });
     $functionNam=$_POST['functionName'];
     if($functionNam=="getlAppointement"){
@@ -25,9 +24,7 @@ spl_autoload_register(function($className) {
                 'PatientLastName'=>$row['PatientLastName'],
                 'title'=>$row['title']
             );
-
         }
-
         $data['AppointementData']=$arr;
         echo json_encode($data);
     }

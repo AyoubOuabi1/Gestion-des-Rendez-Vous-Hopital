@@ -24,8 +24,8 @@
         <section class="mx-10">
         <div class="mb-6 mt-6">
           <?php
-             $count = new Patient ;
-             $data  = $count->countPatient() ;
+            //  $count = new Patient ;
+             $data  = Patient::countPatient() ;
            ?>
             <h4>All Patients <span>(<?php echo $data['numberOfPatients'] ?>)</span></h4>
         </div>  
@@ -42,8 +42,8 @@
             </thead>
             <tbody>
               <?php
-                $select = new Patient ;
-                $row    = $select->selectPatient() ; 
+                // $select = new Patient() ;
+                $row    = Patient::selectPatient() ; 
                 foreach($row as $rows){
                 ?>
               <tr>
