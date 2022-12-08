@@ -34,8 +34,8 @@
             <div class="flex justify-between items-center border py-3 px-6 rounded w-64">
                 <div>
                     <?php 
-                        $count = new Patient ;
-                        $data  = $count->countPatient() ;
+                        // $count = new Patient ;
+                        $data  = Patient::countPatient() ;
                     ?>
                     <span class="font-bold text-sky-500"><?php echo $data['numberOfPatients'] ; ?></span>
                     <h3>Patients</h3>
