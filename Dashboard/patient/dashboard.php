@@ -22,39 +22,41 @@
   <div class="grid grid-cols-12">
       <section class="col-span-2">
         <?php
-          include "sidbar.html";
+          include "sideBar.html";
           ?>
       </section>
     <section class="bg-slate-100 col-span-10">
-        <div  id="adminDashAdminPage">
+        <div  id="patientDashHomePage">
             <?php
-            include "admin.php";
+            include "Home.php";
             ?>
         </div>
-        <div class="hidden" id="adminDashAppointmentPage">
+        <div class="hidden" id="patientDashDoctorsPage">
             <?php
-            include "appointmentAdmin.html";
+            include "Doctors.php";
             ?>
         </div>
-        <div class="hidden" id="adminDashDoctorPage">
+        <div class="hidden" id="patientDashSessionsPage">
             <?php
-            include "doctors.html";
+            include "Scheduled_Sessions.php";
             ?>
         </div>
-        <div class="hidden" id="adminDashPatientsPage">
+        <div class="hidden" id="patientDashBookingsPage">
             <?php
-            include "patients.php";
+            include "My_bookings.php";
             ?>
         </div>
-        <div class="hidden" id="adminDashSchedulePage">
+        <div  class="hidden" id="patientDashSettingsPage">
             <?php
-            include "ScheduleAdmin.html";
+            include "Settings.php";
             ?>
         </div>
     </section>
   </div>
   <script
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+          integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
+          crossorigin="anonymous"></script>
   <script src="../../Scripts/main.js"></script>
 </body>
 </html>
