@@ -88,33 +88,76 @@ function changeDoctorDashIntoSettingPage(){
     $('#DoctorDashboardSession').addClass('hidden');
 }
 
+
+
+
+//patient section
+function changePatientDashIntoHomePage(){
+    $('#patientDashHomePage').removeClass('hidden');
+    $('#patientDashDoctorsPage').addClass('hidden');
+    $('#patientDashSessionsPage').addClass('hidden');
+    $('#patientDashBookingsPage').addClass('hidden');
+    $('#patientDashSettingsPage').addClass('hidden');
+}
+
+function changePatientDashIntoDoctorsPage(){
+    $('#patientDashDoctorsPage').removeClass('hidden');
+    $('#patientDashHomePage').addClass('hidden');
+    $('#patientDashSessionsPage').addClass('hidden');
+    $('#patientDashBookingsPage').addClass('hidden');
+    $('#patientDashSettingsPage').addClass('hidden');
+}
+
+function changePatientDashIntoSessionsPage(){
+    $('#patientDashSessionsPage').removeClass('hidden');
+    $('#patientDashHomePage').addClass('hidden');
+    $('#patientDashDoctorsPage').addClass('hidden');
+    $('#patientDashBookingsPage').addClass('hidden');
+    $('#patientDashSettingsPage').addClass('hidden');
+}
+function changePatientDashIntoBookingsPage(){
+    $('#patientDashBookingsPage').removeClass('hidden');
+    $('#patientDashHomePage').addClass('hidden');
+    $('#patientDashDoctorsPage').addClass('hidden');
+    $('#patientDashSessionsPage').addClass('hidden');
+    $('#patientDashSettingsPage').addClass('hidden');
+}
+function changePatientDashIntoSettingsPage(){
+    $('#patientDashSettingsPage').removeClass('hidden');
+    $('#patientDashHomePage').addClass('hidden');
+    $('#patientDashDoctorsPage').addClass('hidden');
+    $('#patientDashSessionsPage').addClass('hidden');
+    $('#patientDashBookingsPage').addClass('hidden');
+
+}
+
 //ajax function
 // appointment section
 
-function getAppointment (role){
-    $.ajax({
-        type:"POST",
-        url:"../../includes/Appointment.inc.php",
-        data:{functionName:"getlAppointement"},
-        dataType:"json",
-        success: function(data){
-            for(var i=0; i<data.AppointementData.length;i++){
-                if(role=="doctor"){
-                    document.querySelector('.AppointmentBody').innerHTML+=`
-                     <tr>
-                      
-                        <td class="px-4 py-2 text-center">${data.AppointementData[i].PatientFirstName}  ${data.AppointementData[i].PatientLastName}</td>
-                        <td class="px-4 py-2 text-center">${data.AppointementData[i].id}</td>
-                        <td class="px-4 py-2 text-center">${data.AppointementData[i].title}</td>
-                        <td class="px-4 py-2 text-center">${data.AppointementData[i].sessdate}</td>
-                        <td class="px-4 py-2 text-center">${data.AppointementData[i].appdate}</td>
-                        <td class="px-4 py-2 text-center">
-                            <button class="bg-sky-100 hover:bg-blue-700 hover:text-white text-sky-500 py-2 px-4 rounded"><i class="fa fa-trash mr-2"></i>Cancel</button>
-                        </td>
-              </tr>
-                `;
-                }else if (role == 'admin'){
-                    document.querySelector('.AppointmentBody').innerHTML+=`
+    function getAppointment (role) {
+        document.querySelector('.AppointmentBody').innerHTML="";
+        $.ajax({
+            type: "POST",
+            url: "../../includes/Appointment.inc.php",
+            data: {functionName: "getlAppointement"},
+            dataType: "json",
+            success: function (data) {
+                for (var i = 0; i < data.AppointementData.length; i++) {
+                    if (role == "doctor") {
+                        document.querySelector('.AppointmentBody').innerHTML += `
+                        <tr>
+                            <td class="px-4 py-2 text-center">${data.AppointementData[i].PatientFirstName}  ${data.AppointementData[i].PatientLastName}</td>
+                            <td class="px-4 py-2 text-center">${data.AppointementData[i].id}</td>
+                            <td class="px-4 py-2 text-center">${data.AppointementData[i].title}</td>
+                            <td class="px-4 py-2 text-center">${data.AppointementData[i].sessdate}</td>
+                            <td class="px-4 py-2 text-center">${data.AppointementData[i].appdate}</td>
+                            <td class="px-4 py-2 text-center">
+                            <button class="bg-sky-100 hover:bg-blue-700 hover:text-white text-sky-500 py-2 px-4 rounded" id="${data.AppointementData[i].id}" onclick="calncelAppointment(this.id,'doctor')"><i class="fa fa-trash mr-2"></i>Cancel</button>
+                            </td>
+                        </tr>
+                    `;
+                } else if (role == 'admin') {
+                    document.querySelector('.AppointmentBody').innerHTML += `
                      <tr>
                       
                         <td class="px-4 py-2 text-center">${data.AppointementData[i].PatientFirstName}  ${data.AppointementData[i].PatientLastName}</td>
@@ -124,7 +167,7 @@ function getAppointment (role){
                         <td class="px-4 py-2 text-center">${data.AppointementData[i].sessdate}</td>
                         <td class="px-4 py-2 text-center">${data.AppointementData[i].appdate}</td>
                         <td class="px-4 py-2 text-center">
-                            <button class="bg-sky-100 hover:bg-blue-700 hover:text-white text-sky-500 py-2 px-4 rounded"><i class="fa fa-trash mr-2"></i>Cancel</button>
+                            <button class="bg-sky-100 hover:bg-blue-700 hover:text-white text-sky-500 py-2 px-4 rounded" data-role="${role}" id="${data.AppointementData[i].id}" onclick="calncelAppointment(this.id,'admin')"><i class="fa fa-trash mr-2"></i>Cancel</button>
                         </td>
               </tr>
                 `;
@@ -134,7 +177,25 @@ function getAppointment (role){
 
 
         },
-        error: function(data) {
+        error: function (data) {
+            console.log(data);
+            }
+        })
+    }
+
+
+function calncelAppointment (id,role) {
+
+    $.ajax({
+        type: "POST",
+        url: "../../includes/Appointment.inc.php",
+        data: {functionName: "canculAppointement",appId:id},
+        dataType: "json",
+        success: function (data) {
+            alert(data);
+           getAppointment(role)
+        },
+        error: function (data) {
             console.log(data);
         }
     })

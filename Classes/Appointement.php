@@ -87,9 +87,8 @@ class Appointement
 
     public static function canculAppointement($id){
         $con=DbConnection::connect();
-        $qry=$con->prepare("Delete from Appointement where id=?");
-        $qry->execute([$id]);
-        if($qry>0){
+        $qry=$con->prepare("Delete from Appointment where id='$id'");
+        if($qry->execute()>0){
             $con=null;
             return true;
         }else{

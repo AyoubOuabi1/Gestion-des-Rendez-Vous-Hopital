@@ -34,10 +34,10 @@ getAppointmentData();
         echo json_encode($data);
     }
     function canculAppointement(){
-        $id=$_GET['appId'];
+        $id=$_POST['appId'];
         if(Appointement::canculAppointement($id)){
             echo "true";
         }else{
             echo "false";
-        };
+        }
     }
