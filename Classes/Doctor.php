@@ -20,6 +20,7 @@ class Doctor extends User
      */
     public function getNationalCode()
     {
+
         return $this->nationalCode;
     }
 
@@ -80,6 +81,7 @@ class Doctor extends User
     }
 
     public function addDoctor(){
+
 
     }
     public function updateDoctor(){

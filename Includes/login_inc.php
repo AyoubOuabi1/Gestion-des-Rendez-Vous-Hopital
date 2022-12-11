@@ -1,10 +1,15 @@
 <?php
+spl_autoload_register(function($className) {
+    $file = '../Classes'.$className.'.php';
+    if (file_exists($file)) {
+        require $file;
+    }
+});
  if (isset($_POST["submit"]))
 {     //Grapping the data
     $email = $_POST["fLoginEmail"];
     $password = $_POST["fLoginPsd"];
   
-    include "../Classes/login_classes.php";
     if(login_classes::getUser($email, $password)==1){
         echo '</br> admin';
         // header("location:dashboard.php");
