@@ -1,3 +1,11 @@
+
+<?php
+
+include '../../Classes/Patient.php' ;
+include '../../Classes/Session.php' ;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,32 +26,34 @@
           ?>
       </section>
     <section class="col-span-10 bg-slate-100">
-        <div class="hidden" id="adminDashAdminPage">
+        <div id="DoctorDashboardHome">
             <?php
             include "DoctorDashboard.html";
             ?>
         </div>
-        <div class="hidden"  id="adminDashAdminPage">
+        <div class="hidden"  id="DoctorDashboardPatient">
             <?php
             include "DoctorDashPatients.html";
             ?>
         </div>
-        <div class="hidden"  id="adminDashAdminPage">
+        <div class="hidden"  id="DoctorDashboardApp">
             <?php
             include "DoctotDashApp.html";
             ?>
         </div>
-        <div   id="adminDashAdminPage">
+        <div class="hidden"  id="DoctorDashboardSession">
             <?php
-            include "DoctorDashSession.html";
+            include "DoctorDashSession.php";
+            ?>
+        </div>
+        <div  class="hidden" id="DoctorDashboardSettings">
+            <?php
+            include "DoctorDashSettings.html";
             ?>
         </div>
     </section>
   </div>
-  <script
-          src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
-          integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
-          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../../Scripts/main.js"></script>
 </body>
 </html>
