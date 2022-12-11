@@ -142,9 +142,13 @@ function changePatientDashIntoSettingsPage(){
             data: {functionName: "getlAppointement"},
             dataType: "json",
             success: function (data) {
+                let dct=0;
+                let ad=0;
                 for (var i = 0; i < data.AppointementData.length; i++) {
                     if (role == "doctor") {
-                        document.querySelector('.AppointmentBody').innerHTML += `
+                        dct++;
+
+                            document.querySelector('.AppointmentBody').innerHTML += `
                         <tr>
                             <td class="px-4 py-2 text-center">${data.AppointementData[i].PatientFirstName}  ${data.AppointementData[i].PatientLastName}</td>
                             <td class="px-4 py-2 text-center">${data.AppointementData[i].id}</td>
@@ -157,7 +161,9 @@ function changePatientDashIntoSettingsPage(){
                         </tr>
                     `;
                 } else if (role == 'admin') {
-                    document.querySelector('.AppointmentBody').innerHTML += `
+                        ad++;
+
+                        document.querySelector('.AppointmentBody').innerHTML += `
                      <tr>
                       
                         <td class="px-4 py-2 text-center">${data.AppointementData[i].PatientFirstName}  ${data.AppointementData[i].PatientLastName}</td>
@@ -174,6 +180,8 @@ function changePatientDashIntoSettingsPage(){
                 }
 
             }
+                $('#appCounteAdmin').html("All Appointments ("+ad+")");
+                $('#appCounteDctr').html("All Appointments ("+dct+")");
 
 
         },
@@ -192,8 +200,26 @@ function calncelAppointment (id,role) {
         data: {functionName: "canculAppointement",appId:id},
         dataType: "json",
         success: function (data) {
-            alert(data);
-           getAppointment(role)
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, Cancel it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Canceled!',
+                        'Your Appointment has been canceled.',
+                        'success'
+                    )
+                    getAppointment(role)
+                }
+
+            })
+
         },
         error: function (data) {
             console.log(data);
