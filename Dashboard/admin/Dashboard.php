@@ -1,6 +1,8 @@
 <?php
 
   include '../../Classes/Patient.php' ;
+  include '../../Classes/Session.php' ;
+
 
 ?>
 
@@ -19,6 +21,8 @@
     <title>Dashboard</title>
 </head>
 <body>
+
+
   <div class="grid grid-cols-12">
       <section class="col-span-2">
         <?php
@@ -38,7 +42,7 @@
         </div>
         <div class="hidden" id="adminDashDoctorPage">
             <?php
-            include "doctors.html";
+            include "doctors.php";
             ?>
         </div>
         <div class="hidden" id="adminDashPatientsPage">
@@ -48,12 +52,11 @@
         </div>
         <div class="hidden" id="adminDashSchedulePage">
             <?php
-            include "ScheduleAdmin.html";
+            include "ScheduleAdmin.php";
             ?>
         </div>
     </section>
   </div>
-  <script
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../../Scripts/main.js"></script>
 </body>

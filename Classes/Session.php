@@ -14,14 +14,15 @@ class Session
      * @param $sessDate
      * @param $maxNumber
      */
-    public function __construct($sessionId, $doctorId, $title, $sessDate, $maxNumber)
+    public function __construct( $title, $sessDate, $maxNumber,$doctorId)
     {
-        $this->sessionId = $sessionId;
+        // $this->sessionId = $sessionId;
         $this->doctorId = $doctorId;
         $this->title = $title;
         $this->sessDate = $sessDate;
         $this->maxNumber = $maxNumber;
     }
+
 
     /**
      * @return mixed
@@ -31,13 +32,13 @@ class Session
         return $this->sessionId;
     }
 
-    /**
-     * @param mixed $sessionId
-     */
-    public function setSessionId($sessionId): void
-    {
-        $this->sessionId = $sessionId;
-    }
+    // /**
+    //  * @param mixed $sessionId
+    //  */
+    // public function setSessionId($sessionId): void
+    // {
+    //     $this->sessionId = $sessionId;
+    // }
 
     /**
      * @return mixed
@@ -105,9 +106,21 @@ class Session
 
 
     public function addSession(){
-        $addsess = DbConnection::connect()->prepare("INSERT INTO `session`(`title`, `sessdate`, `maxNumber`, `doctorid`) VALUES ('$this->title','$this->sessDate','$this->maxNumber','$this->doctorId'");
-        $addsess ->execute();
-    }
+
+        $conn = DbConnection::connect();
+
+        $stmt = $conn->prepare("INSERT INTO `session`(`title`, `sessdate`, `maxNumber`, `doctorid`) VALUES ('$this->title','$this->sessDate','$this->maxNumber','1')");
+        if($stmt->execute()>0){
+            return true;
+        }else {
+            return false;
+        }
+     }
+
+
+        // $addsess = DbConnection::connect()->prepare();
+        // $addsess ->execute();
+    
     public function removeSesssion(){
         $qry = DbConnection::connect()->prepare("delete from `session` where id = '$this->sessionId'");
         $qry ->execute();
@@ -122,14 +135,23 @@ class Session
     $apdsess ->execute();
     }
 
-    public function selectSession(){
-        $sess = DbConnection::connect()->prepare("select from session");
+    public static function selectSession(){
+        $sess = DbConnection::connect()->prepare("SELECT c.id, c.title, c.sessdate, c.maxNumber, d.firstName as fn ,d.lastName as ln FROM `session` c 
+        INNER JOIN doctor d on c.doctorid = d.id");
+        $sess ->execute();
+        return $sess->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public static function selectSessionDoc(){
+        $sess = DbConnection::connect()->prepare("SELECT * FROM session WHERE doctorid = 1");
         $sess ->execute();
         return $sess->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
     public function BookingSession(){
 
     }
+
+
 
 }
