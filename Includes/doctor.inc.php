@@ -4,8 +4,21 @@ spl_autoload_register(function ($className) {
     require $file;
 });
 
-addDoctor();
+//addDoctor();
+$functionName=$_GET['functionName'];
 
+if($functionName="delete"){
+    delete();
+}else {
+    addDoctor();
+}
+
+function delete(){
+    $id=$_GET["id"];
+    if(Doctor::deleteDoctor($id)){
+        echo 'true';
+    }
+}
 
 
 

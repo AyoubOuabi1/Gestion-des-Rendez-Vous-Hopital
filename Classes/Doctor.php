@@ -1,6 +1,7 @@
 <?php
 include_once "DbConnection.php";
 
+
 class Doctor  extends User
 {
     private $nationalCode;
@@ -105,10 +106,17 @@ class Doctor  extends User
         }
      }
     public function updateDoctor(){
-
+       
     }
-    public function deleteDoctor(){
-
+    public static function deleteDoctor(){
+        $conn = DbConnection::connect();
+        $id = $_GET['id'];
+        $stmt = $conn->prepare("DELETE FROM `doctor` WHERE id=:id");
+        if ($stmt->execute(array(':id' => $id)) > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
     public static function selecetDoctors(){
         $conn = DbConnection::connect();

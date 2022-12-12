@@ -124,4 +124,14 @@ function changePatientDashIntoSettingsPage(){
     $('#patientDashDoctorsPage').addClass('hidden');
     $('#patientDashSessionsPage').addClass('hidden');
     $('#patientDashBookingsPage').addClass('hidden');
-}
+} 
+// ////////////////
+// function checkDelete(id) {
+//   console.log(id);
+
+//   if (confirm("Are you sure do you want to delete!!")) {
+//     window.location.href =
+//       "http://localhost/Gestion-des-Rendez-Vous-Hopital/includes/doctor.php?functionName=delete&id="+id;
+//   }
+// }
+

@@ -52,7 +52,7 @@
                     <td class="px-4 py-2 text-center">
                         <button class="bg-sky-100 hover:bg-blue-700 hover:text-white text-sky-500 py-2 px-4 rounded"><i class="fa fa-pencil-alt mr-2"></i>Edit</button>
                         <button class="bg-sky-100 hover:bg-blue-700 hover:text-white text-sky-500 py-2 px-4 rounded" data-modal-toggle="authentication-modal"><i class="fa fa-eye mr-2"></i>View</button>
-                        <button class=" bg-sky-100 hover:bg-blue-700 hover:text-white text-sky-500 py-2 px-4 rounded"><i class="fa fa-trash mr-2"></i>Remove</button>
+                        <button class=" bg-sky-100 hover:bg-blue-700 hover:text-white text-sky-500 py-2 px-4 rounded"><i class="fa fa-trash mr-2" onclick='checkDelete()'></i>Remove</button>
                     </td>
                 </tr>';
             } ?>
@@ -70,12 +70,11 @@
                     </svg>
                     <span class="sr-only">Close modal</span>
                 </button>
-                <div class="px-6 py-6 lg:px-8">if (isset($_POST['submit'])) addDoctor();
+                <div class="px-6 py-6 lg:px-8">
                     <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Informations of Doctor</h3>
                     <form class="space-y-6" action="#" method=POST>
                         <?php 
-                        $row = Doctor::selecetDoctors();
-                        foreach ($rows as $row) { ?>
+                        $row = Doctor::selecetDoctors();?>
                             <div>
                                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">CIN</label>
                                 <input type="text" name="cin" id="cin1" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" value="<?php echo $rows['cin'] ?>">
@@ -101,7 +100,6 @@
                                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone Number</label>
                                 <input type="text" name="pNumber" id="pNumber1" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" value="<?php echo $rows['teleNumber'] ?>">
                             </div>
-                        <?php } ?>
                     </form>
                 </div>
             </div>
