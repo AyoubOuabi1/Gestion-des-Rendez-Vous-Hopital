@@ -7,6 +7,7 @@ class User
     private $lastName;
     private $email;
     private $password;
+    public $test;
 
     /**
      * @param $id
@@ -103,7 +104,5 @@ class User
     {
         $this->password = $password;
     }
-
-
 
 }

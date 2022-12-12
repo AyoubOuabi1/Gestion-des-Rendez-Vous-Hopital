@@ -109,7 +109,11 @@ class Session
 
         $conn = DbConnection::connect();
 
-        $stmt = $conn->prepare("INSERT INTO `session`(`title`, `sessdate`, `maxNumber`, `doctorid`) VALUES ('$this->title','$this->sessDate','$this->maxNumber','1')");
+        $stmt = $conn->prepare("INSERT INTO `session`(`title`, `sessdate`, `maxNumber`, `doctorid`) VALUES ('$this->title','$this->sessDate','$this->maxNumber','$this->doctorId')");
+        // echo "<pre>" ;
+        //     var_dump($stmt) ;
+        // echo "</pre>" ;
+        // die() ;
         if($stmt->execute()>0){
             return true;
         }else {
@@ -143,6 +147,17 @@ class Session
     }
     public static function selectSessionDoc(){
         $sess = DbConnection::connect()->prepare("SELECT * FROM session WHERE doctorid = 1");
+        $sess ->execute();
+        return $sess->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public static function selectsessuntilweek(){
+        $sess = DbConnection::connect()->prepare("SELECT * FROM session WHERE doctorid = 1 and sessdate  BETWEEN NOW() AND NOW() + INTERVAL 1 WEEK");
+        $sess ->execute();
+        return $sess->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public static function selectsessuntiTuesday(){
+        $sess = DbConnection::connect()->prepare("SELECT * FROM session WHERE doctorid = 1 and sessdate  BETWEEN NOW() AND NOW() + INTERVAL DAYOFWEEK(sessdate) = 2");
         $sess ->execute();
         return $sess->fetchAll(PDO::FETCH_ASSOC);
     }

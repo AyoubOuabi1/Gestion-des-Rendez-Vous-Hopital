@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <title>Home</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    
-</head>
-
-<body>
+<section class=" mx-3 my-2">
     <div class="flex justify-between" >
         <h3 class="font-bold pt-3">Home</h3>
         <div class="flex items-center">
             <div>
                 <p class="text-slate-400">Today's Date</p>
-                <h3 class="font-bold">2022-12-02</h3>
+                <h3 class="font-bold"><?php echo date('Y-m-d') ;?></h3>
             </div>
 
             <div class="mx-2 p-1 border-inherit rounded bg-slate-200">
@@ -36,8 +24,9 @@
             <button class="bg-blue-500 hover:bg-blue-700 text-white rounded py-2 px-6 ml-2">Search</button>
         </div>
     </div>
+</section>
 
-
+<section class="mx-10">
     <div class="grid grid-cols-12 gap-3">
         <div class="col-span-6">
             <div class="mt-10">
@@ -73,8 +62,11 @@
 
                 <div class="row-span-1 p-5 border border-inherit rounded-md bg-slate-50">
                     <div class="flex justify-between">
+                        <?php 
+                            $data  = Patient::countPatient() ;
+                        ?>
                         <div>
-                            <p class="text-blue-500 font-bold">3</p>
+                            <p class="text-blue-500 font-bold"><?php echo $data['numberOfPatients'] ; ?></p>
                             <h3 class="">All Patients</h3>
                         </div>
 
@@ -135,8 +127,5 @@
         </div>
 
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
-        integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
-    <script src="Scripts/main.js"></script>
+</section>
 </body>

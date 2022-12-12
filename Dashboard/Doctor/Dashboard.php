@@ -3,6 +3,8 @@
 
 include '../../Classes/Patient.php' ;
 include '../../Classes/Session.php' ;
+  include '../../Classes/Doctor.php' ;
+
 
 ?>
 
@@ -28,7 +30,7 @@ include '../../Classes/Session.php' ;
     <section class="col-span-10 bg-slate-100">
         <div id="DoctorDashboardHome">
             <?php
-            include "DoctorDashboard.html";
+            include "DoctorDashboard.php";
             ?>
         </div>
         <div class="hidden"  id="DoctorDashboardPatient">
@@ -44,6 +46,11 @@ include '../../Classes/Session.php' ;
         <div class="hidden"  id="DoctorDashboardSession">
             <?php
             include "DoctorDashSession.php";
+            ?>
+        </div>
+        <div  class="hidden" id="DoctorDashboardSettings">
+            <?php
+            include "DoctorDashSettings.html";
             ?>
         </div>
         <div  class="hidden" id="DoctorDashboardSettings">
