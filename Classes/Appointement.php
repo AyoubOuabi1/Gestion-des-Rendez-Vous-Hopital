@@ -101,9 +101,10 @@ class Appointement
     }
     public static function getlAppointement(){
         $con=DbConnection::connect();
-        $apps=$con->prepare("select * from appointment");
+        $apps=$con->prepare("select * from appointmentdata");
         $apps->execute();
+
         $con=null;
-        return $apps->fetchAll(PDO::FETCH_ASSOC);
+        return $apps->fetchAll();
     }
 }

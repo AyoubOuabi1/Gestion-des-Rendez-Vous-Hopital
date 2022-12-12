@@ -1,6 +1,14 @@
 <?php
+<<<<<<< HEAD
 include '../../Classes/Patient.php';
 include '../../Classes/Doctor.php'
+=======
+
+  include '../../Classes/Patient.php' ;
+  include '../../Classes/Session.php' ;
+
+
+>>>>>>> main
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +28,8 @@ include '../../Classes/Doctor.php'
 </head>
 
 <body>
+
+
   <div class="grid grid-cols-12">
     <section class="col-span-2">
       <?php
@@ -27,6 +37,7 @@ include '../../Classes/Doctor.php'
       ?>
     </section>
     <section class="bg-slate-100 col-span-10">
+<<<<<<< HEAD
       <div id="adminDashAdminPage">
         <?php
         include "admin.php";
@@ -55,6 +66,36 @@ include '../../Classes/Doctor.php'
     </section>
   </div>
   <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+=======
+        <div  id="adminDashAdminPage">
+            <?php
+            include "admin.php";
+            ?>
+        </div>
+        <div class="hidden" id="adminDashAppointmentPage">
+            <?php
+            include "appointmentAdmin.html";
+            ?>
+        </div>
+        <div class="hidden" id="adminDashDoctorPage">
+            <?php
+            include "doctors.php";
+            ?>
+        </div>
+        <div class="hidden" id="adminDashPatientsPage">
+            <?php
+            include "patients.php";
+            ?>
+        </div>
+        <div class="hidden" id="adminDashSchedulePage">
+            <?php
+            include "ScheduleAdmin.php";
+            ?>
+        </div>
+    </section>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+>>>>>>> main
   <script src="../../Scripts/main.js"></script>
   <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
 </body>
