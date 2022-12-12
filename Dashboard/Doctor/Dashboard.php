@@ -44,11 +44,13 @@ include '../../Classes/Session.php' ;
             ?>
         </div>
         <div class="hidden"  id="DoctorDashboardSession">
+
             <?php
             include "DoctorDashSession.php";
             ?>
         </div>
         <div  class="hidden" id="DoctorDashboardSettings">
+
             <?php
             include "DoctorDashSettings.html";
             ?>
