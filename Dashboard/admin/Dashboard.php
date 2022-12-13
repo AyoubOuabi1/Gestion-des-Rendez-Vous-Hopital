@@ -1,14 +1,7 @@
 <?php
-<<<<<<< HEAD
-include '../../Classes/Patient.php';
-include '../../Classes/Doctor.php'
-=======
-
-  include '../../Classes/Patient.php' ;
-  include '../../Classes/Session.php' ;
-
-
->>>>>>> main
+include_once '../../Classes/Patient.php';
+include_once '../../Classes/Doctor.php';
+include_once  '../../Classes/Session.php';
 ?>
 
 <!DOCTYPE html>
@@ -20,16 +13,12 @@ include '../../Classes/Doctor.php'
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css" />
-
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../../Styles/main.css">
-
   <title>Dashboard</title>
 </head>
 
 <body>
-
-
   <div class="grid grid-cols-12">
     <section class="col-span-2">
       <?php
@@ -37,7 +26,6 @@ include '../../Classes/Doctor.php'
       ?>
     </section>
     <section class="bg-slate-100 col-span-10">
-<<<<<<< HEAD
       <div id="adminDashAdminPage">
         <?php
         include "admin.php";
@@ -60,44 +48,14 @@ include '../../Classes/Doctor.php'
       </div>
       <div class="hidden" id="adminDashSchedulePage">
         <?php
-        include "ScheduleAdmin.html";
+        include "ScheduleAdmin.php";
         ?>
       </div>
     </section>
   </div>
-  <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
-=======
-        <div  id="adminDashAdminPage">
-            <?php
-            include "admin.php";
-            ?>
-        </div>
-        <div class="hidden" id="adminDashAppointmentPage">
-            <?php
-            include "appointmentAdmin.html";
-            ?>
-        </div>
-        <div class="hidden" id="adminDashDoctorPage">
-            <?php
-            include "doctors.php";
-            ?>
-        </div>
-        <div class="hidden" id="adminDashPatientsPage">
-            <?php
-            include "patients.php";
-            ?>
-        </div>
-        <div class="hidden" id="adminDashSchedulePage">
-            <?php
-            include "ScheduleAdmin.php";
-            ?>
-        </div>
-    </section>
-  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
->>>>>>> main
-  <script src="../../Scripts/main.js"></script>
   <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
+  <script src="../../Scripts/main.js"></script>
 </body>
 
 </html>

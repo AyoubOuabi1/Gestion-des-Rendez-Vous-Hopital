@@ -1,7 +1,15 @@
 <?php
 include_once "DbConnection.php";
+include_once "User.php";
 
 
+if (isset($_GET['id'])) {
+    Doctor::deleteDoctor();
+
+}
+if (isset($_GET['idview'])) {
+    Doctor::displayDoctor();
+}
 class Doctor  extends User
 {
     private $nationalCode;
@@ -111,11 +119,13 @@ class Doctor  extends User
     public static function deleteDoctor(){
         $conn = DbConnection::connect();
         $id = $_GET['id'];
-        $stmt = $conn->prepare("DELETE FROM `doctor` WHERE id=:id");
-        if ($stmt->execute(array(':id' => $id)) > 0) {
+        $stmt = $conn->prepare("DELETE FROM `doctor` WHERE id=$id");
+        if ($stmt->execute(array('id' => $id)) > 0) {
             return true;
+            // echo "deleted" ;
         } else {
             return false;
+            // echo "error" ;
         }
     }
     public static function selecetDoctors(){
@@ -125,10 +135,10 @@ class Doctor  extends User
          return $allData;
     //     var_dump($allData);
     }
-    public function displayDoctor(){
-        $id = $_GET['id'];
+    public static function displayDoctor(){
+        $id = $_GET['idview'];
         $conn = DbConnection::connect();
-        $stmt = $conn->query("SELECT doctor FROM doctor WHERE id=$id");
+        $stmt = $conn->query("SELECT * FROM doctor WHERE id=$id");
         $allData = $stmt->fetchAll();
         return $allData;
     }
@@ -151,4 +161,6 @@ class Doctor  extends User
     //      $data= $stmt->execute(array());
     //      $allData=$data->fetchAll();
 }
+
+
 
