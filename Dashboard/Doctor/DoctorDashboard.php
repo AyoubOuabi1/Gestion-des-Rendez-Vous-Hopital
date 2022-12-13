@@ -95,14 +95,27 @@
                 </tr>
                 </thead>
                 <tbody>
+
+
+                    
+                    <?php
+                    $result1=Session::selectsessuntilweek();
+        ?>
+                
+                <?php
+foreach($result1 as $row){
+                ?>
+
                 <tr>
-                    <td></td>
-                    <td class="py-2">
+                    <td><?= $row['title'] ?></td>
+                    <!-- <td class="py-2">
                         <img src="../../img/notfound.svg" alt="" style="width: 300px; height:100px;">
-                    </td>
+                    </td> -->
+
+                    <td></td>
                     <td></td>
                 </tr>
-
+<?php } ?>
                 </tbody>
             </table>
 

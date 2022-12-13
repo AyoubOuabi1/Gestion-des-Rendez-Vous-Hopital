@@ -2,6 +2,7 @@
 
   include '../../Classes/Patient.php' ;
   include '../../Classes/Session.php' ;
+  include '../../Classes/Doctor.php' ;
 
 
 ?>
@@ -53,6 +54,7 @@
         <div class="hidden" id="adminDashSchedulePage">
             <?php
             include "ScheduleAdmin.php";
+            
             ?>
         </div>
     </section>

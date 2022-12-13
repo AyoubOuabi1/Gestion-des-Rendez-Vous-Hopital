@@ -90,7 +90,19 @@ class Doctor extends User
     public function deleteDoctor(){
 
     }
-    public function selecetDoctor(){
 
+    public static function selecetDoctors(){
+        $conn = DbConnection::connect();
+        $stmt = $conn->query("SELECT * FROM doctor");
+        $allData = $stmt->fetchAll();
+         return $allData;
+    //     var_dump($allData);
+    }
+    public function displayDoctor(){
+        $id = $_GET['id'];
+        $conn = DbConnection::connect();
+        $stmt = $conn->query("SELECT doctor FROM doctor WHERE id=$id");
+        $allData = $stmt->fetchAll();
+        return $allData;
     }
 }

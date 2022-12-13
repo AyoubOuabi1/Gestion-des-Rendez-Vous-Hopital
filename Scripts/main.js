@@ -181,3 +181,4 @@ function getAppointment (role){
             console.log(data);
         }
     })
+}

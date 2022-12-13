@@ -43,7 +43,7 @@
 
 
                 <!-- Button trigger modal -->
-
+ 
 
 <!-- Modal -->
 <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
@@ -59,7 +59,7 @@
           data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body relative p-4">
-        
+
 
       <form method="POST">
                         
@@ -128,15 +128,18 @@
                         <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
 <select name="doc" id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
   <option selected>Choose a doctor</option>
-  <option value="US">United States</option>
-  <option value="CA">Canada</option>
-  <option value="FR">France</option>
-  <option value="DE">Germany</option>
 
 
+  <?php
+            $result1=Doctor::selecetDoctors();
+?>
+<?php
 
-
-
+foreach($result1 as $row){
+                ?>
+  <option value="<?= $row['id'] ?>"> <?php echo $row['firstName'] .' '. $row['lastName']  ?></option>
+<?php }
+?>
 </select>
 
                             </div>
@@ -191,8 +194,6 @@
 
                       $ss1 = new Session($title,$date,$maxNum,$doc);
                       $ss1->addSession();
-
-
                     }?>
 
 
