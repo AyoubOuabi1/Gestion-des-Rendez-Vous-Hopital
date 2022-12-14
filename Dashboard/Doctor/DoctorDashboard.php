@@ -104,17 +104,24 @@
                 
                 <?php
 foreach($result1 as $row){
-                ?>
-
-                <tr>
-                    <td><?= $row['title'] ?></td>
-                    <!-- <td class="py-2">
+                ?><tr>
+             <?php   if ($row === 0){ ?>
+                    
+                             <td class="py-2">
                         <img src="../../img/notfound.svg" alt="" style="width: 300px; height:100px;">
-                    </td> -->
+                    </td>
 
-                    <td></td>
-                    <td></td>
-                </tr>
+                    
+              <?php  }else{ ?>
+        
+                 
+                    <td ><?= $row['title'] ?></td>
+               
+                    <td><?php echo $row['fn'] .' '. $row['ln']  ?></td>
+                    <td><?= $row['sessdate'] ?></td>
+                
+                <?php } ?>
+              </tr>
 <?php } ?>
                 </tbody>
             </table>
