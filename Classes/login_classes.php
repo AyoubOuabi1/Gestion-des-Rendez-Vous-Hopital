@@ -4,7 +4,7 @@ class login_classes {
     public static function getUser($email, $password)
     {
         $conn=DbConnection::connect();
-        $admin = $conn->prepare('SELECT `email`, `password` FROM admin WHERE email=:mail AND password=:pas;');
+        $admin = $conn->prepare('SELECT `id` FROM admin WHERE email=:mail AND password=:pas;');
         $doctor = $conn->prepare('SELECT `email`, `password` FROM doctor WHERE email=:mail AND password=:pas;');
         $user = $conn->prepare('SELECT `email`, `password` FROM patient WHERE email=:mail AND password=:pas;');
 
