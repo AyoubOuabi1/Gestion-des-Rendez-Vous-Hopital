@@ -1,3 +1,13 @@
+
+<?php
+
+include '../../Classes/Patient.php' ;
+include '../../Classes/Session.php' ;
+  include '../../Classes/Doctor.php' ;
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +30,7 @@
     <section class="col-span-10 bg-slate-100">
         <div id="DoctorDashboardHome">
             <?php
-            include "DoctorDashboard.html";
+            include "DoctorDashboard.php";
             ?>
         </div>
         <div class="hidden"  id="DoctorDashboardPatient">
@@ -34,8 +44,15 @@
             ?>
         </div>
         <div class="hidden"  id="DoctorDashboardSession">
+
             <?php
-            include "DoctorDashSession.html";
+            include "DoctorDashSession.php";
+            ?>
+        </div>
+        <div  class="hidden" id="DoctorDashboardSettings">
+
+            <?php
+            include "DoctorDashSettings.html";
             ?>
         </div>
         <div  class="hidden" id="DoctorDashboardSettings">
@@ -45,7 +62,6 @@
         </div>
     </section>
   </div>
-  <script
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
