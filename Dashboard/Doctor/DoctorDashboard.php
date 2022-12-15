@@ -43,7 +43,10 @@
                 <div class="row-span-1 p-5 border border-inherit rounded-md bg-slate-50">
                     <div class="flex justify-between">
                         <div>
-                            <p class="text-blue-500 font-bold">3</p>
+                            <?php
+                                $row = Patient::countPatient() ;
+                            ?>
+                            <p class="text-blue-500 font-bold"><?php echo $row['numberOfPatients'] ?></p>
                             <h3 class="">All Patients</h3>
                         </div>
 
@@ -97,6 +100,7 @@
                 <tbody>
 
 
+
                     
                     <?php
                     $result1=Session::selectsessuntilweek();
@@ -123,6 +127,7 @@ foreach($result1 as $row){
                 <?php } ?>
               </tr>
 <?php } ?>
+
                 </tbody>
             </table>
 
