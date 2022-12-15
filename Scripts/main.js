@@ -217,3 +217,4 @@ document.getElementById('phone').value = patientPhone ;
 document.getElementById('email').value = patientEmail ;
 document.getElementById('birthday').value = patientBirthday ;
 }
+

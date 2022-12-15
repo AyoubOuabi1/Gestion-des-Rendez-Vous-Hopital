@@ -1,5 +1,10 @@
+
 <?php
-  include '../../Classes/Patient.php' ;
+
+include '../../Classes/Patient.php' ;
+include '../../Classes/Session.php' ;
+  include '../../Classes/Doctor.php' ;
+
 ?>
 
 <!DOCTYPE html>
@@ -40,8 +45,15 @@
             ?>
         </div>
         <div class="hidden"  id="DoctorDashboardSession">
+
             <?php
-            include "DoctorDashSession.html";
+            include "DoctorDashSession.php";
+            ?>
+        </div>
+        <div  class="hidden" id="DoctorDashboardSettings">
+
+            <?php
+            include "DoctorDashSettings.html";
             ?>
         </div>
         <div  class="hidden" id="DoctorDashboardSettings">
@@ -51,7 +63,6 @@
         </div>
     </section>
   </div>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../../Scripts/main.js"></script>
 </body>
