@@ -1,4 +1,5 @@
 <?php
+include '../Classes/login_classes.php' ;
 spl_autoload_register(function($className) {
     $file = '../Classes'.$className.'.php';
     if (file_exists($file)) {
@@ -14,7 +15,10 @@ spl_autoload_register(function($className) {
         echo '</br> admin';
         // header("location:dashboard.php");
     } else if (login_classes::getUser($email, $password) == 0) {
-        echo '</br> user';
+        // echo '</br> user';
+        header('location: ../dashboard/patient/dashboard.php') ;
+        
+
     } else if (login_classes::getUser($email, $password) == 2) {
         echo '</br> doctor';
     }else{

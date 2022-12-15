@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +56,7 @@
                 </div>
                 <div class="m-6 w-96">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="fAddress">Telophone Number:</label>
-                    <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="telephone" name="telephone" placeholder="tele" required>
+                    <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="teleNumber" name="teleNumber" placeholder="tele" required>
                 </div>
                 <div class="m-6 w-96">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="fAddress">Address:</label>

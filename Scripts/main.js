@@ -98,6 +98,8 @@ function changePatientDashIntoHomePage(){
     $('#patientDashSessionsPage').addClass('hidden');
     $('#patientDashBookingsPage').addClass('hidden');
     $('#patientDashSettingsPage').addClass('hidden');
+    $('#patientDashEditPage').addClass('hidden');
+
 }
 
 function changePatientDashIntoDoctorsPage(){
@@ -106,6 +108,8 @@ function changePatientDashIntoDoctorsPage(){
     $('#patientDashSessionsPage').addClass('hidden');
     $('#patientDashBookingsPage').addClass('hidden');
     $('#patientDashSettingsPage').addClass('hidden');
+    $('#patientDashEditPage').addClass('hidden');
+
 }
 
 function changePatientDashIntoSessionsPage(){
@@ -114,6 +118,8 @@ function changePatientDashIntoSessionsPage(){
     $('#patientDashDoctorsPage').addClass('hidden');
     $('#patientDashBookingsPage').addClass('hidden');
     $('#patientDashSettingsPage').addClass('hidden');
+    $('#patientDashEditPage').addClass('hidden');
+
 }
 function changePatientDashIntoBookingsPage(){
     $('#patientDashBookingsPage').removeClass('hidden');
@@ -121,6 +127,8 @@ function changePatientDashIntoBookingsPage(){
     $('#patientDashDoctorsPage').addClass('hidden');
     $('#patientDashSessionsPage').addClass('hidden');
     $('#patientDashSettingsPage').addClass('hidden');
+    $('#patientDashEditPage').addClass('hidden');
+
 }
 function changePatientDashIntoSettingsPage(){
     $('#patientDashSettingsPage').removeClass('hidden');
@@ -128,7 +136,17 @@ function changePatientDashIntoSettingsPage(){
     $('#patientDashDoctorsPage').addClass('hidden');
     $('#patientDashSessionsPage').addClass('hidden');
     $('#patientDashBookingsPage').addClass('hidden');
+    $('#patientDashEditPage').addClass('hidden');
 
+}
+
+function changePatientDashIntoEditPage(){
+    $('#patientDashEditPage').removeClass('hidden');
+    $('#patientDashSettingsPage').addClass('hidden');
+    $('#patientDashHomePage').addClass('hidden');
+    $('#patientDashDoctorsPage').addClass('hidden');
+    $('#patientDashSessionsPage').addClass('hidden');
+    $('#patientDashBookingsPage').addClass('hidden');
 }
 
 //ajax function
@@ -181,3 +199,21 @@ function getAppointment (role){
             console.log(data);
         }
     })
+}
+
+function getPatientInfos(patientId){
+    // document.getElementById('patientId').innerText ;
+let patientFirstName = document.getElementById(`patientFirstName${patientId}`).innerText ;
+let patientLastName = document.getElementById(`patientLastName${patientId}`).innerText ;
+let patientCin      = document.getElementById(`patientCin${patientId}`).innerText ;
+let patientPhone    = document.getElementById(`patientPhone${patientId}`).innerText ;
+let patientEmail    = document.getElementById(`patientEmail${patientId}`).innerText ; 
+let patientBirthday = document.getElementById(`patientBirthday${patientId}`).innerText ;
+
+document.getElementById('firstname').value = patientFirstName ;
+document.getElementById('lastname').value = patientLastName ;
+document.getElementById('cin').value = patientCin ;
+document.getElementById('phone').value = patientPhone ;
+document.getElementById('email').value = patientEmail ;
+document.getElementById('birthday').value = patientBirthday ;
+}
