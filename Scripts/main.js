@@ -204,9 +204,9 @@ function getAppointment(role) {
 //   let pNumber = document.getElementById();
 // }
 
-function salam() {
-  alert("3likomsalam");
-}
+// function salam() {
+//   alert("3likomsalam");
+// }
 
 //       },
 //     });

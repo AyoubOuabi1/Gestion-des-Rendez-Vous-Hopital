@@ -7,9 +7,9 @@ if (isset($_GET['id'])) {
     Doctor::deleteDoctor();
 
 }
-if (isset($_GET['idview'])) {
-    Doctor::displayDoctor();
-}
+// if (isset($_GET['idview'])) {
+//     Doctor::editDoctor();
+// }
 class Doctor  extends User
 {
     private $nationalCode;
@@ -103,10 +103,11 @@ class Doctor  extends User
         $firstName= $this->getFirstName();
          $email = $this->getEmail();
          $password=$this->getPassword();
+         $speciality=$this->getSpeciality();
         // $password = $_POST["password"];
         // $speciality = $_POST["speciality"];
         // $telenumber = $_POST["pNumber"];
-        $stmt = $conn->prepare("INSERT INTO `doctor`(`cin`, `nationalCode`, `firstName`, `lastName`, `email`, `password`, `speciality`, `teleNumber`) VALUES ('$this->cin','$this->nationalCode','$firstName','$lastName','$email','$password','$this->speciality','$this->telenumber')");
+        $stmt = $conn->prepare("INSERT INTO `doctor`(`cin`, `nationalCode`, `firstName`, `lastName`, `email`, `password`, `speciality`, `teleNumber`) VALUES ('$this->cin','$this->nationalCode','$firstName','$lastName','$email','$password','$speciality','$this->telenumber')");
         if($stmt->execute()>0){
             return true;
         }else {
@@ -135,10 +136,9 @@ class Doctor  extends User
          return $allData;
     //     var_dump($allData);
     }
-    public static function displayDoctor(){
-        $id = $_GET['idview'];
+    public static function viewDoctor($iddoctor){
         $conn = DbConnection::connect();
-        $stmt = $conn->query("SELECT * FROM doctor WHERE id=$id");
+        $stmt = $conn->query("SELECT * FROM doctor WHERE id=$iddoctor");
         $allData = $stmt->fetchAll();
         return $allData;
     }
