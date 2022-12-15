@@ -9,13 +9,13 @@ spl_autoload_register(function($className) {
 {     //Grapping the data
     $fname= $_POST["firstName"];
     $lname=$_POST["lastName"];
-    $teleNumber = $_POST["teleNumber"];
+    $telephone = $_POST["telephone"];
     $address = $_POST["fAddress"];
     $cin = $_POST["fCin"];
     $date = $_POST["fDate"];
     $email = $_POST["fSgnEmail"];
     $password = $_POST["fSgnpsd"];
     //Instantiate SignupContr class
-  Signup::setUser($cin, $fname, $lname, $teleNumber, $email, $password, $address,  $date);
+  Signup::setUser($cin, $fname, $lname, $telephone, $email, $password, $address,  $date);
 
 }

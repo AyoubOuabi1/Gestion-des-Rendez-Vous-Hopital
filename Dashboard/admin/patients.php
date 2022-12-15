@@ -34,7 +34,7 @@
               <tr>
                 <th class="border-b-2 border-b-blue-500 px-4 py-2 text-center">Name</th>
                 <th class="border-b-2 border-b-blue-500 px-4 py-2 text-center">CIN</th>
-                <th class="border-b-2 border-b-blue-500 px-4 py-2 text-center">teleNumber</th>
+                <th class="border-b-2 border-b-blue-500 px-4 py-2 text-center">Telephone</th>
                 <th class="border-b-2 border-b-blue-500 px-4 py-2 text-center">Email</th>
                 <th class="border-b-2 border-b-blue-500 px-4 py-2 text-center">Date of Birth</th>
                 <th class="border-b-2 border-b-blue-500 px-4 py-2 text-center">Events</th>
@@ -51,7 +51,7 @@
                 <td class="px-4 py-2 text-center hidden" id="patientLastName<?php echo $rows['id'] ?>"><?php echo $rows['lastName'] ?></td>
                 <td class="px-4 py-2 text-center" ><?php echo $rows['firstName']." ".$rows['lastName']?></td>
                 <td class="px-4 py-2 text-center" id="patientCin<?php echo $rows['id'] ?>"><?php echo $rows['cin'] ?></td>
-                <td class="px-4 py-2 text-center" id="patientPhone<?php echo $rows['id'] ?>"><?php echo $rows['teleNumber'] ?></td>
+                <td class="px-4 py-2 text-center" id="patientPhone<?php echo $rows['id'] ?>"><?php echo $rows['telephone'] ?></td>
                 <td class="px-4 py-2 text-center" id="patientEmail<?php echo $rows['id'] ?>"><?php echo $rows['email'] ?></td>
                 <td class="px-4 py-2 text-center" id="patientBirthday<?php echo $rows['id'] ?>"><?php echo $rows['birthday'] ?></td>
                 <td class="px-4 py-2 text-center">
