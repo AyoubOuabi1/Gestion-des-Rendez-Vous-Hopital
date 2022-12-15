@@ -1,8 +1,8 @@
 <?php
 
-  include '../../Classes/Patient.php' ;
-  include '../../Classes/Session.php' ;
-  include '../../Classes/Doctor.php' ;
+  include_once '../../Classes/Patient.php' ;
+  include_once '../../Classes/Session.php' ;
+  include_once '../../Classes/Doctor.php' ;
 
 
 ?>

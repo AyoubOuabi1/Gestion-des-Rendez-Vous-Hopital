@@ -107,7 +107,7 @@ class Appointement
     }
     public static function getlAppointement(){
         $con=DbConnection::connect();
-        $apps=$con->prepare("select * from appointmentdata where date");
+        $apps=$con->prepare("select * from appointmentdata");
         $apps->execute();
         $con=null;
         return $apps->fetchAll();

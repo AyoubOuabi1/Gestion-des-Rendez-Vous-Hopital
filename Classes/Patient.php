@@ -95,6 +95,8 @@ class Patient extends User
         return $data ;
     }
 
+
+
 }
 
     // $count = new Patient ;
