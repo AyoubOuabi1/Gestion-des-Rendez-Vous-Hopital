@@ -144,6 +144,8 @@ class Patient extends User
         return $data ;
     }
 
+
+
 }
 
 if(isset($_POST['updatePatient'])){

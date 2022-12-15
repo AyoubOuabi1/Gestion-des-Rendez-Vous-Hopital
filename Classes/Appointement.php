@@ -87,13 +87,19 @@ class Appointement
 
     public static function canculAppointement($id){
         $con=DbConnection::connect();
-        $qry=$con->prepare("Delete from Appointement where id=?");
-        $qry->execute([$id]);
-        if($qry>0){
-            $con=null;
+        $qry1=$con->prepare("select sessionid from appointmentdata where id ='$id'");
+        $qry1->execute();
+        $session=$qry1->fetch();
+        $qry2=$con->prepare("select maxNumber from session where id='$session'");
+        $qry2->execute();
+        $max=$qry2->fetch();
+        $qry3=$con->prepare("update session set maxNumber='$max'+1 where id='$session'");
+        $qry3->execute();
+        $qry=$con->prepare("Delete from Appointment where id='$id'");
+        $con=null;
+        if($qry->execute()){
             return true;
         }else{
-            $con=null;
             return false;
         }
 
@@ -103,7 +109,6 @@ class Appointement
         $con=DbConnection::connect();
         $apps=$con->prepare("select * from appointmentdata");
         $apps->execute();
-
         $con=null;
         return $apps->fetchAll();
     }

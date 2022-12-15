@@ -1,5 +1,6 @@
 <?php
-
+include "DbConnection.php";
+session_start();
 class User
 {
     private $id;
@@ -103,6 +104,35 @@ class User
     public function setPassword($password): void
     {
         $this->password = $password;
+    }
+    public static function getUser($email, $password)
+    {
+        $conn=DbConnection::connect();
+        $admin = $conn->prepare('SELECT `id` FROM admin WHERE email=? AND password=?');
+        $doctor = $conn->prepare('SELECT `id` FROM doctor WHERE email=? AND password=?');
+        $user = $conn->prepare('SELECT `id` FROM patient WHERE email=? AND password=?');
+        $admin->execute(array($email,$password));
+        $user->execute(array($email,$password));
+        $doctor->execute(array($email,$password));
+        if($admin->rowCount()>0){
+            $_SESSION['adminId'] = $admin->fetch();
+            $conn=null;
+            return 0;
+
+        } else if($user->rowCount() > 0) {
+            $conn=null;
+            $_SESSION['patientId'] = $user->fetch();
+           return 1;
+
+        }else if ($doctor->rowCount() > 0){
+
+            $conn=null;
+            $_SESSION['doctorId']=$doctor->fetch();
+            return 2;
+
+        }else {
+            return 3;
+        }
     }
 
 }
