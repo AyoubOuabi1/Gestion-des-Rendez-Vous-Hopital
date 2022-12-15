@@ -135,4 +135,11 @@ class User
         }
     }
 
+    public static function logOut() {
+        session_start();
+        session_unset();
+        session_destroy();
+        header("location: http://localhost/Gestion-des-Rendez-Vous-Hopital");
+    }
+
 }

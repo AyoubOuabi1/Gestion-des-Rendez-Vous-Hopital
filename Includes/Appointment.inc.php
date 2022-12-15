@@ -12,6 +12,8 @@
         canculAppointement();
     }else if ($functionNam=="getDoctorAppointmentData"){
         getDoctorAppointmentData();
+    }else if ($functionNam=="getpatientAppointmentData"){
+        getPatientAppointmentData();
     }
     session_start();
     //get All appointment data
@@ -27,7 +29,20 @@
     function getDoctorAppointmentData() {
         $arr= array();
         foreach(Appointement::getlAppointement() as $row){
-            if($_SESSION["doctorId"]==$row["doctorId"]){
+            if($_SESSION["doctorId"][0]==$row["doctorId"]){
+                $arr = getArr($row, $arr);
+            }
+
+        }
+        $data['AppointementData']=$arr;
+        echo json_encode($data);
+    }
+
+    function getPatientAppointmentData()
+    {
+        $arr= array();
+        foreach(Appointement::getlAppointement() as $row){
+            if($_SESSION["patientId"][0]==$row["doctorId"]){
                 $arr = getArr($row, $arr);
             }
 
