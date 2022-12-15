@@ -70,7 +70,7 @@ class Patient extends User
     public static function selectPatient(){
         $connection = new DbConnection ;
         $connection = $connection->connect() ;
-        $query      = " SELECT id, firstName, lastName, cin, teleNumber, email, birthday FROM patient " ;
+        $query      = " SELECT id, firstName, lastName, cin, telephone, email, birthday FROM patient " ;
         $stmt       = $connection->query($query) ;
         $data       = $stmt->fetchAll() ;
         return $data ;
@@ -79,7 +79,7 @@ class Patient extends User
     public static function selectPatientsOfDoctor(){
         $connection = new DbConnection ;
         $connection = $connection->connect() ;
-        $query      = " SELECT DISTINCT patient.id, patient.firstName, patient.lastName, patient.cin, patient.birthday, patient.email, patient.teleNumber  FROM `patient` JOIN `session` ON session.doctorid = 1 JOIN `appointment` ON appointment.sessionid = 1 AND patient.id = 4" ;
+        $query      = " SELECT DISTINCT patient.id, patient.firstName, patient.lastName, patient.cin, patient.birthday, patient.email, patient.telephone  FROM `patient` JOIN `session` ON session.doctorid = 1 JOIN `appointment` ON appointment.sessionid = 1 AND patient.id = 4" ;
         $stmt       = $connection->query($query) ;
         $data       = $stmt->fetchAll() ;
         return $data ;
