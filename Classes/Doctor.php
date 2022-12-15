@@ -1,5 +1,4 @@
 <?php
-include_once "DbConnection.php";
 include_once "User.php";
 
 

@@ -109,7 +109,11 @@ class Session
 
         $conn = DbConnection::connect();
 
-        $stmt = $conn->prepare("INSERT INTO `session`(`title`, `sessdate`, `maxNumber`, `doctorid`) VALUES ('$this->title','$this->sessDate','$this->maxNumber','1')");
+        $stmt = $conn->prepare("INSERT INTO `session`(`title`, `sessdate`, `maxNumber`, `doctorid`) VALUES ('$this->title','$this->sessDate','$this->maxNumber','$this->doctorId')");
+        // echo "<pre>" ;
+        //     var_dump($stmt) ;
+        // echo "</pre>" ;
+        // die() ;
         if($stmt->execute()>0){
             return true;
         }else {
@@ -146,6 +150,26 @@ class Session
         $sess ->execute();
         return $sess->fetchAll(PDO::FETCH_ASSOC);
     }
+    public static function selectsessuntilweek(){
+        $sess = DbConnection::connect()->prepare("SELECT c.id, c.title, c.sessdate, c.maxNumber, d.firstName as fn ,d.lastName as ln FROM `session` c 
+        INNER JOIN doctor d on c.doctorid = d.id WHERE doctorid = 1 and sessdate  BETWEEN NOW() AND NOW() + INTERVAL 1 WEEK");
+        $sess ->execute();
+        return $sess->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public static function selectallsessuntilweek(){
+        $sess = DbConnection::connect()->prepare("SELECT c.id, c.title, c.sessdate, c.maxNumber, d.firstName as fn ,d.lastName as ln FROM `session` c 
+        INNER JOIN doctor d on c.doctorid = d.id WHERE sessdate  BETWEEN NOW() AND NOW() + INTERVAL 1 WEEK");
+        $sess ->execute();
+        return $sess->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public static function selectsessuntiTuesday(){
+        $sess = DbConnection::connect()->prepare("SELECT * FROM session WHERE doctorid = 1 and sessdate  BETWEEN NOW() AND NOW() + INTERVAL DAYOFWEEK(sessdate) = 2");
+        $sess ->execute();
+        return $sess->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
 
 
     public function BookingSession(){

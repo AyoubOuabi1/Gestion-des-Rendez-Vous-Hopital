@@ -117,14 +117,34 @@
                     </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td class="py-2">
-                                <img src="../../img/notfound.svg" alt="" style="width: 300px; height:100px;">
-                            </td>
-                            <td></td>
-                        </tr>
-                    </tbody>
+
+
+
+                    <?php
+                    $result1=Session::selectallsessuntilweek();
+        ?>
+                
+                <?php
+foreach($result1 as $row){
+                ?><tr>
+             <?php   if ($row === 0){ ?>
+                    
+                             <td class="py-2">
+                        <img src="../../img/notfound.svg" alt="" style="width: 300px; height:100px;">
+                    </td>
+
+                    
+              <?php  }else{ ?>
+        
+                 
+                    <td ><?= $row['title'] ?></td>
+               
+                    <td><?php echo $row['fn'] .' '. $row['ln']  ?></td>
+                    <td><?= $row['sessdate'] ?></td>
+                
+                <?php } ?>
+              </tr>
+<?php } ?>
                 </table>
                 <div>
                     <button class="bg-blue-500 w-full hover:bg-blue-700 text-white py-1 px-4 rounded mb-6">Show all Sessions</button>
